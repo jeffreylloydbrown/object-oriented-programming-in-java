@@ -1,0 +1,8 @@
+1.  550
+2.  50,50,200,300 and 250,50,200,300
+3.  forgetting to call map2.draw(), Placing map2 outside coordinates of window
+4.  -22.9, -43.2
+5.  Something else not listed above (getting IntelliJ to work with PApplet)
+6.  1 hour
+7.  Less than 1 hour
+
