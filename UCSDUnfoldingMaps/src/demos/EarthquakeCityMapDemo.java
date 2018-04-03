@@ -43,7 +43,7 @@ public class EarthquakeCityMapDemo extends PApplet {
 	public static final float THRESHOLD_LIGHT = 4;
 
 	/** This is where to find the local tiles, for working without an Internet connection */
-	public static String mbTilesString = "blankLight-1-3.mbtiles";
+	public static String mbTilesString = "data/blankLight-1-3.mbtiles";
 	
 	// The map
 	private UnfoldingMap map;
