@@ -85,11 +85,12 @@ public class EarthquakeCityMap extends PApplet {
 	    //PointFeatures have a getLocation method
 	    List<PointFeature> earthquakes = ParseFeed.parseEarthquake(this, earthquakesURL);
 	    
-	    //TODO (Step 3): Add a loop here that calls createMarker (see below) 
+	    //(Step 3): Add a loop here that calls createMarker (see below)
 	    // to create a new SimplePointMarker for each PointFeature in 
 	    // earthquakes.  Then add each new SimplePointMarker to the 
 	    // List markers (so that it will be added to the map in the line below)
-	    
+	    for (PointFeature eq : earthquakes)
+	    	markers.add(createMarker(eq));
 	    
 	    // Add the markers to the map so that they are displayed
 	    map.addMarkers(markers);
