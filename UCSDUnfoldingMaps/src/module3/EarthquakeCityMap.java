@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Processing library
+import de.fhpotsdam.unfolding.providers.Microsoft;
 import processing.core.PApplet;
 
 //Unfolding libraries
@@ -42,6 +43,7 @@ public class EarthquakeCityMap extends PApplet {
 
 	// Various colors we'll use.
 	private int black = color(0,0,0);
+	private int beige = color(245,245,220);
 	private int red = color(255,0,0);
 	private int yellow = color(255, 255,0);
 	private int blue = color(0,0,255);
@@ -58,25 +60,37 @@ public class EarthquakeCityMap extends PApplet {
 	// The map
 	private UnfoldingMap map;
 
+	// canvas size information.
+	private int canvasWidth = 950;
+	private int canvasHeight = 600;
+
 	// map's size information.
-	private int mapX = 200;
-	private int mapY = 50;
-	private int mapWidth = 700;
-	private int mapHeight = 500;
+	private int borderSize = 50;
+	private int mapX = 4*borderSize;
+	private int mapY = borderSize;
+	private int mapWidth = canvasWidth-mapX-borderSize;
+	private int mapHeight = canvasHeight-(2*borderSize);
+
+	// legend's size information.
+	private int legendX = borderSize;
+	private int legendY = borderSize;
+	private int legendWidth = mapX - (2*borderSize);
+	private int legendHeight = mapHeight/3;
 	
 	//feed with magnitude 2.5+ Earthquakes
 	private String earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.atom";
 
 	
 	public void setup() {
-		size(950, 600, OPENGL);
+		size(canvasWidth, canvasHeight, OPENGL);
 
 		if (offline) {
 		    map = new UnfoldingMap(this, mapX, mapY, mapWidth, mapHeight, new MBTilesMapProvider(mbTilesString));
 		    earthquakesURL = "data/2.5_week.atom"; 	// Same feed, saved Aug 7, 2015, for working offline
 		}
 		else {
-			map = new UnfoldingMap(this, mapX, mapY, mapWidth, mapHeight, new Google.GoogleMapProvider());
+			//map = new UnfoldingMap(this, mapX, mapY, mapWidth, mapHeight, new Google.GoogleMapProvider());
+			map = new UnfoldingMap(this, mapX, mapY, mapWidth, mapHeight, new Microsoft.RoadProvider());
 			// IF YOU WANT TO TEST WITH A LOCAL FILE, uncomment the next line
 			//earthquakesURL = "data/2.5_week.atom";
 		}
@@ -135,14 +149,17 @@ public class EarthquakeCityMap extends PApplet {
 	    if (mag < THRESHOLD_LIGHT) {
 	    	// minor earthquakes are blue with small markers
 			marker.setColor(blue);
+			marker.setStrokeColor(blue);
 			marker.setRadius(minorRadius);
 		} else if (mag < THRESHOLD_MODERATE) {
 	    	// light earthquakes are yellow with medium markers
 			marker.setColor(yellow);
+			marker.setStrokeColor(yellow);
 			marker.setRadius(lightRadius);
 		} else {
 	    	// high magnitude earthquakes are red with large markers
 			marker.setColor(red);
+			marker.setStrokeColor(red);
 			marker.setRadius(largeRadius);
 		}
 	    
@@ -158,10 +175,59 @@ public class EarthquakeCityMap extends PApplet {
 
 
 	// helper method to draw key in GUI
-	// TODO: Implement this method to draw the key
+	// Implement this method to draw the key
 	private void addKey() 
 	{	
-		// Remember you can use Processing's graphics methods here
-	
+		// draw the key background.
+		fill(beige);
+		rect(legendX, legendY, legendWidth, legendHeight);
+
+		// lay out the key text
+		fill(black);
+		textSize(10);
+		int textLeft = legendX+10;
+		int textRight = legendX+legendWidth-10;
+		int textTop = legendY+10;
+		int textBottom = legendY+legendHeight-10;
+		int textCenter = (textLeft+textRight)/2;
+
+		// `line` will track our current output (y coord) line.
+		int line = textTop+10;
+		int lineHeight = 10;
+
+		// draw the key title.
+		textAlign(CENTER, BASELINE);
+		text("Earthquake Key", textCenter, line);
+
+		// skip 4 lines.
+		line += 4*lineHeight;
+
+		// Rest of the text is left-aligned.
+		textAlign(LEFT, BASELINE);
+		textLeft = textLeft + 20;
+		textSize(8);
+
+		stroke(black);
+		fill(black);
+		text(String.format("%2.1f+ Magnitude", THRESHOLD_MODERATE), textLeft, line);
+		stroke(red);
+		fill(red);
+		ellipse(textLeft-15, line-3, largeRadius, largeRadius);
+
+		line += 3*lineHeight;
+		stroke(black);
+		fill(black);
+		text(String.format("%2.1f+ Magnitude", THRESHOLD_LIGHT), textLeft, line);
+		stroke(yellow);
+		fill(yellow);
+		ellipse(textLeft-15, line-3, lightRadius, lightRadius);
+
+		line += 3*lineHeight;
+		stroke(black);
+		fill(black);
+		text(String.format("Below %2.1f", THRESHOLD_LIGHT), textLeft, line);
+		stroke(blue);
+		fill(blue);
+		ellipse(textLeft-15, line-3, minorRadius, minorRadius);
 	}
 }
