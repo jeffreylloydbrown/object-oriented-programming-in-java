@@ -46,6 +46,12 @@ public class EarthquakeCityMap extends PApplet {
 	private int yellow = color(255, 255,0);
 	private int blue = color(0,0,255);
 
+	// Various marker sizes
+	private int baseRadius = 5;
+	private int minorRadius = 1*baseRadius;
+	private int lightRadius = 2*baseRadius;
+	private int largeRadius = 3*baseRadius;
+
 	/** This is where to find the local tiles, for working without an Internet connection */
 	public static String mbTilesString = "data/blankLight-1-3.mbtiles";
 	
@@ -102,7 +108,7 @@ public class EarthquakeCityMap extends PApplet {
 	 * In step 3 You can use this method as-is.  Call it from a loop in the 
 	 * setp method.  
 	 * 
-	 * TODO (Step 4): Add code to this method so that it adds the proper 
+	 * (Step 4): Add code to this method so that it adds the proper
 	 * styling to each marker based on the magnitude of the earthquake.  
 	*/
 	private SimplePointMarker createMarker(PointFeature feature)
@@ -118,14 +124,27 @@ public class EarthquakeCityMap extends PApplet {
 		Object magObj = feature.getProperty("magnitude");
 		float mag = Float.parseFloat(magObj.toString());
 		
-		// TODO (Step 4): Add code below to style the marker's size and color
+		// (Step 4): Add code below to style the marker's size and color
 	    // according to the magnitude of the earthquake.  
 	    // Don't forget about the constants THRESHOLD_MODERATE and 
 	    // THRESHOLD_LIGHT, which are declared above.
 	    // Rather than comparing the magnitude to a number directly, compare 
 	    // the magnitude to these variables (and change their value in the code 
 	    // above if you want to change what you mean by "moderate" and "light")
-	    
+
+	    if (mag < THRESHOLD_LIGHT) {
+	    	// minor earthquakes are blue with small markers
+			marker.setColor(blue);
+			marker.setRadius(minorRadius);
+		} else if (mag < THRESHOLD_MODERATE) {
+	    	// light earthquakes are yellow with medium markers
+			marker.setColor(yellow);
+			marker.setRadius(lightRadius);
+		} else {
+	    	// high magnitude earthquakes are red with large markers
+			marker.setColor(red);
+			marker.setRadius(largeRadius);
+		}
 	    
 	    // Finally return the marker
 	    return marker;
