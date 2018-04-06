@@ -14,6 +14,15 @@ import processing.data.XML;
 
 public class ParseFeed {
 
+    private static float getOrDefault(String s, float dflt) {
+        try {
+            float f = Float.parseFloat(s);
+            return f;
+        } catch (Exception e) {
+            // do nothing
+        }
+        return dflt;
+    }
 
 	/*
 	 * This method is to parse a GeoRSS feed corresponding to earthquakes around
@@ -49,7 +58,7 @@ public class ParseFeed {
 				if (titleStr != null) {
 					point.putProperty("title", titleStr);
 					// get magnitude from title
-					point.putProperty("magnitude", Float.parseFloat(titleStr.substring(2, 5)));
+					point.putProperty("magnitude", getOrDefault(titleStr.substring(2, 5), -1f));
 				}
 
 				// Sets depth(elevation) if existing
