@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b6461c3-c987-47b9-a42e-49489e5ee628" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module4/EarthquakeCityMap.java" afterPath="$PROJECT_DIR$/src/module4/EarthquakeCityMap.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,16 +23,23 @@
       <file leaf-file-name="EarthquakeCityMap.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/module4/EarthquakeCityMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+            <state relative-caret-position="314">
+              <caret line="157" column="41" lean-forward="false" selection-start-line="157" selection-start-column="41" selection-end-line="157" selection-end-column="41" />
               <folding>
-                <element signature="e#7146#7163#0" expanded="true" />
+                <element signature="e#7448#7465#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -61,11 +69,12 @@
         <option value="$PROJECT_DIR$/src/module4/CityMarker.java" />
         <option value="$PROJECT_DIR$/data/city-data.json" />
         <option value="$PROJECT_DIR$/src/parsing/ParseFeed.java" />
+        <option value="$PROJECT_DIR$/src/colors/Colors.java" />
         <option value="$PROJECT_DIR$/src/module4/EarthquakeCityMap.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -354,7 +363,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -401,7 +410,7 @@
         <state relative-caret-position="1326">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
-            <element signature="e#7146#7163#0" expanded="true" />
+            <element signature="e#7448#7465#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -467,7 +476,7 @@
         <state relative-caret-position="969">
           <caret line="72" column="47" lean-forward="true" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
           <folding>
-            <element signature="e#7146#7163#0" expanded="true" />
+            <element signature="e#7448#7465#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -541,7 +550,7 @@
         <state relative-caret-position="1224">
           <caret line="72" column="88" lean-forward="false" selection-start-line="72" selection-start-column="88" selection-end-line="72" selection-end-column="88" />
           <folding>
-            <element signature="e#7146#7163#0" expanded="true" />
+            <element signature="e#7448#7465#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -702,14 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module3/EarthquakeCityMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="92" column="74" lean-forward="false" selection-start-line="92" selection-start-column="74" selection-end-line="92" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/module1/HelloWorld.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
@@ -782,12 +783,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/colors/Colors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/module3/EarthquakeCityMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="48" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/module4/EarthquakeCityMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+        <state relative-caret-position="314">
+          <caret line="157" column="41" lean-forward="false" selection-start-line="157" selection-start-column="41" selection-end-line="157" selection-end-column="41" />
           <folding>
-            <element signature="e#7146#7163#0" expanded="true" />
+            <element signature="e#7448#7465#0" expanded="true" />
           </folding>
         </state>
       </provider>
