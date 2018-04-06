@@ -1,6 +1,7 @@
 package module4;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import de.fhpotsdam.unfolding.UnfoldingMap;
@@ -179,6 +180,12 @@ public class EarthquakeCityMap extends PApplet {
 		// not inside any country
 		return false;
 	}
+
+	// Add 1 to the count stored in the hashmap `counts`.  If `name` doesn't exist in `counts`,
+    // add it to the hashmap with the count 1.
+    private void bumpQuakeCount (HashMap<String, Integer> counts, String name) {
+        counts.put(name, counts.getOrDefault(name, 0) + 1);
+    }
 	
 	/* prints countries with number of earthquakes as
 	 * Country1: numQuakes1
@@ -188,35 +195,32 @@ public class EarthquakeCityMap extends PApplet {
 	 * */
 	private void printQuakes() 
 	{
-		// TODO: Implement this method
-		// One (inefficient but correct) approach is to:
-		//   Loop over all of the countries, e.g. using 
-		//        for (Marker cm : countryMarkers) { ... }
-		//        
-		//      Inside the loop, first initialize a quake counter.
-		//      Then loop through all of the earthquake
-		//      markers and check to see whether (1) that marker is on land
-		//     	and (2) if it is on land, that its country property matches 
-		//      the name property of the country marker.   If so, increment
-		//      the country's counter.
-		
-		// Here is some code you will find useful:
-		// 
-		//  * To get the name of a country from a country marker in variable cm, use:
-		//     String name = (String)cm.getProperty("name");
-		//  * If you have a reference to a Marker m, but you know the underlying object
-		//    is an EarthquakeMarker, you can cast it:
-		//       EarthquakeMarker em = (EarthquakeMarker)m;
-		//    Then em can access the methods of the EarthquakeMarker class 
-		//       (e.g. isOnLand)
-		//  * If you know your Marker, m, is a LandQuakeMarker, then it has a "country" 
-		//      property set.  You can get the country with:
-		//        String country = (String)m.getProperty("country");
-		
-		
+	    // build a hashmap of country names and counts.
+        // while it is suggested to loop over countries, we will instead
+        // loop over the quakeMarkers as they already know if they are land or sea.
+        // We know everything in that list is a subtype of EarthquakeMarker,
+        // although we will still be safe about it.  Even so that means they all
+        // have an isOnLand() method.  Ocean quakes will go into the hashmap under
+        // "OCEAN QUAKES".
+        HashMap<String, Integer> quakeCounts = new HashMap<String, Integer>();
+        String OCEAN_NAME = "OCEAN QUAKES";
+        for (Marker m : quakeMarkers) {
+            if (m instanceof EarthquakeMarker) {
+                EarthquakeMarker em = (EarthquakeMarker) m;
+                bumpQuakeCount(quakeCounts, em.isOnLand() ? (String) em.getProperty("country") : OCEAN_NAME);
+            }
+        }
+
+        // OK, now walk the map.  When we see the OCEAN_NAME key, skip it
+        // during the loop.  After the loop, then print the OCEAN_NAME count so
+        // it always appears at the end of the report.
+        for (String name : quakeCounts.keySet())
+            if (! name.equals(OCEAN_NAME))
+                System.out.println(name + ": " + quakeCounts.get(name));
+        System.out.println(OCEAN_NAME + ": " + quakeCounts.get(OCEAN_NAME));
 	}
-	
-	
+
+
 	
 	// helper method to test whether a given earthquake is in a given country
 	// This will also add the country property to the properties of the earthquake 
