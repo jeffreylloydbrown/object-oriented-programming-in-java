@@ -16,7 +16,8 @@ public class CityMarker extends SimplePointMarker {
 	
 	// The size of the triangle marker
 	// It's a good idea to use this variable in your draw method
-	public static final int TRI_SIZE = 5;  
+    // I like a larger triangle so I'm doubling what the assignment called for.
+	public static final int TRI_SIZE = 10;
 	
 	public CityMarker(Location location) {
 		super(location);
@@ -24,9 +25,7 @@ public class CityMarker extends SimplePointMarker {
 	
 	
 	public CityMarker(Feature city) { super(((PointFeature)city).getLocation(), city.getProperties()); }
-	
-	
-	
+
 	/**
 	 * Implementation of method to draw marker on the map.
 	 */
@@ -34,8 +33,6 @@ public class CityMarker extends SimplePointMarker {
 		// Save previous drawing style
 		pg.pushStyle();
 
-		//System.out.println(getCity());
-		
 		// Add code to draw a triangle to represent the CityMarker
 		// HINT: pg is the graphics object on which you call the graphics
 		// methods.  e.g. pg.fill(255, 0, 0) will set the color to red
@@ -50,14 +47,14 @@ public class CityMarker extends SimplePointMarker {
 		pg.stroke(red); // no marker outlines blotting out fill if too many markers close together.
 
 		// Need to figure out triangle vertices for equilateral triangle with center (x,y).
-        // Assignment is using marker radius as the length of the side of the triangle.
+        // Assignment is using TRI_SIZE as the length of the side of the triangle.
         // https://www.quora.com/What-is-the-distance-between-the-centre-of-an-equilateral-triangle-and-any-of-its-vertices
         // says distance from (x,y) to any vertex in an equilateral triangle is R=sideLength/sqrt(3).
         // It also says the center to the baseline is r=R/2.  Our triangles will "point up", so
         // the single vertex above the center (x,y) will be (x, y-R)---remember on screen Y grows down the screen---
-        // and the two vertices on the base line below the center (x,y) are at (x-radius/2, y+r) & (x+radius/2, y+r).
-        float R = radius/((float) Math.sqrt(3.0));
-        pg.triangle(x, y-R, x-radius/2, y+R/2, x+radius/2, y+R/2);
+        // and the two vertices on the base line below the center (x,y) are at (x-TRI_SIZE/2, y+r) & (x+TRI_SIZE/2, y+r).
+        float R = TRI_SIZE/((float) Math.sqrt(3.0));
+        pg.triangle(x, y-R, x-TRI_SIZE/2f, y+R/2, x+TRI_SIZE/2f, y+R/2);
 		
 		// Restore previous drawing style
 		pg.popStyle();
