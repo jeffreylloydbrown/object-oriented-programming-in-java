@@ -23,9 +23,13 @@ public abstract class EarthquakeMarker extends SimplePointMarker
 	// You will want to set this in the constructor, either
 	// using the thresholds below, or a continuous function
 	// based on magnitude. 
-  
-	
-	
+
+	// Here are my radius sizes to use.
+    private static final int baseRadius = 5;
+    public static final float SMALL_MAGNITUDE_RADIUS = 1*baseRadius;
+    public static final float LIGHT_MAGNITUDE_RADIUS = 2*baseRadius;
+    public static final float MODERATE_MAGNITUDE_RADIUS = 3*baseRadius;
+
 	/** Greater than or equal to this threshold is a moderate earthquake */
 	public static final float THRESHOLD_MODERATE = 5;
 	/** Greater than or equal to this threshold is a light earthquake */
@@ -50,11 +54,16 @@ public abstract class EarthquakeMarker extends SimplePointMarker
 		// Add a radius property and then set the properties
 		java.util.HashMap<String, Object> properties = feature.getProperties();
 		float magnitude = Float.parseFloat(properties.get("magnitude").toString());
-		properties.put("radius", 2*magnitude );
+		if (magnitude >= THRESHOLD_MODERATE) {
+		    this.radius = MODERATE_MAGNITUDE_RADIUS;
+        } else if (magnitude >= THRESHOLD_LIGHT) {
+		    this.radius = LIGHT_MAGNITUDE_RADIUS;
+        } else {
+		    this.radius = SMALL_MAGNITUDE_RADIUS;
+        }
+		properties.put("radius", this.radius );
 		setProperties(properties);
-		this.radius = 1.75f*getMagnitude();
 	}
-	
 
 	// calls abstract method drawEarthquake and then checks age and draws X if needed
 	public void draw(PGraphics pg, float x, float y) {
