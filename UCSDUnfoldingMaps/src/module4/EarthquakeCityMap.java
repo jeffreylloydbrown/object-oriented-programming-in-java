@@ -153,11 +153,22 @@ public class EarthquakeCityMap extends PApplet {
 		textSize(12);
 		text("Earthquake Key", 50, 75);
 
+		int textLeft = 72;
+
 		fill(red);
 		stroke(red);
 		triangle(58, 96, 53, 105, 63, 105);
 		fill(black);
-		text("City Marker", 72, 100);
+		text("City Marker", textLeft, 100);
+
+		fill(black);
+		stroke(black);
+		ellipse(58, 121, 10, 10);
+		text("Land quake", textLeft, 120);
+		rectMode(CENTER);
+		rect(58, 141, 10, 10, 0);
+		rectMode(CORNER);
+		text("Ocean quake", textLeft, 140);
 
 		/*
 		fill(color(255, 0, 0));
