@@ -169,6 +169,7 @@ public class EarthquakeCityMap extends PApplet {
 		rect(58, 141, 10, 10, 0);
 		rectMode(CORNER);
 		text("Ocean quake", textLeft, 140);
+		text("Size - Magnitude", 50, 180);
 
 		/*
 		fill(color(255, 0, 0));
