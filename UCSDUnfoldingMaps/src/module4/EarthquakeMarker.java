@@ -51,6 +51,7 @@ public abstract class EarthquakeMarker extends SimplePointMarker
 	public EarthquakeMarker (PointFeature feature) 
 	{
 		super(feature.getLocation());
+
 		// Add a radius property and then set the properties
 		java.util.HashMap<String, Object> properties = feature.getProperties();
 		float magnitude = Float.parseFloat(properties.get("magnitude").toString());
@@ -89,7 +90,27 @@ public abstract class EarthquakeMarker extends SimplePointMarker
 	// But this is up to you, of course.
 	// You might find the getters below helpful.
 	private void colorDetermine(PGraphics pg) {
-		//TODO: Implement this method
+		// it is silly to re-execute this over and over from draw().
+        // the color doesn't change so it should be set in the constructor.
+        // but the color method isn't defined in the constructor since
+        // we don't inherit from PApplet.  I thought long about writing
+        // my own shifter to build a correctly formatted int for a color code,
+        // so I could set values in a private field and this method would just
+        // be a call to pg.fill and pg.stroke to use that field.
+        float depth = getDepth();
+        int red = pg.color(255,0,0);
+        int yellow = pg.color(255, 255,0);
+        int blue = pg.color(0,0,255);
+        if (depth >= THRESHOLD_DEEP) {
+            pg.fill(red);
+            pg.stroke(red);
+        } else if (depth >= THRESHOLD_INTERMEDIATE) {
+            pg.fill(blue);
+            pg.stroke(blue);
+        } else { // shallow
+            pg.fill(yellow);
+            pg.stroke(yellow);
+        }
 	}
 	
 	

@@ -144,9 +144,10 @@ public class EarthquakeCityMap extends PApplet {
         int red = color(255,0,0);
         int yellow = color(255, 255,0);
         int blue = color(0,0,255);
+        int white = color(255, 255, 255);
 
 		fill(beige);
-		rect(25, 50, 150, 250);
+		rect(25, 50, 150, 300);
 		
 		fill(black);
 		textAlign(LEFT, CENTER);
@@ -169,21 +170,21 @@ public class EarthquakeCityMap extends PApplet {
 		rect(58, 141, 10, 10, 0);
 		rectMode(CORNER);
 		text("Ocean quake", textLeft, 140);
-		text("Size - Magnitude", 50, 180);
+		text("Size - Magnitude", 50, 170);
 
-		/*
-		fill(color(255, 0, 0));
-		ellipse(50, 125, 15, 15);
-		fill(color(255, 255, 0));
-		ellipse(50, 175, 10, 10);
-		fill(color(0, 0, 255));
-		ellipse(50, 225, 5, 5);
-		
-		fill(0, 0, 0);
-		text("5.0+ Magnitude", 75, 125);
-		text("4.0+ Magnitude", 75, 175);
-		text("Below 4.0", 75, 225);
-		*/
+		fill(red);
+		rect(50, 200, 100, 20);
+		fill(blue);
+		rect(50, 230, 100, 20);
+		fill(yellow);
+		rect(50, 260, 100, 20);
+
+        fill(white);
+        textAlign(CENTER);
+        text("Deep", 100, 214);
+        text("Moderate", 100, 244);
+        fill(black);
+        text("Shallow", 100, 275);
 	}
 
 	
