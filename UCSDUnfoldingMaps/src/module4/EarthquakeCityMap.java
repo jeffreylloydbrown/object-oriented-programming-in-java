@@ -147,7 +147,7 @@ public class EarthquakeCityMap extends PApplet {
         int white = color(255, 255, 255);
 
 		fill(beige);
-		rect(25, 50, 150, 300);
+		rect(25, 50, 150, 295);
 		
 		fill(black);
 		textAlign(LEFT, CENTER);
@@ -173,10 +173,13 @@ public class EarthquakeCityMap extends PApplet {
 		text("Size - Magnitude", 50, 170);
 
 		fill(red);
+		stroke(red);
 		rect(50, 200, 100, 20);
 		fill(blue);
+		stroke(blue);
 		rect(50, 230, 100, 20);
 		fill(yellow);
+		stroke(yellow);
 		rect(50, 260, 100, 20);
 
         fill(white);
@@ -184,7 +187,15 @@ public class EarthquakeCityMap extends PApplet {
         text("Deep", 100, 214);
         text("Moderate", 100, 244);
         fill(black);
-        text("Shallow", 100, 275);
+        text("Shallow", 100, 274);
+
+        fill(black);
+        stroke(black);
+        strokeWeight(2);
+        textAlign(LEFT, CENTER);
+        line(58-5, 310-5, 58+5, 310+5);
+        line(58-5, 310+5, 58+5, 310-5);
+        text("Recent", textLeft, 309);
 	}
 
 	

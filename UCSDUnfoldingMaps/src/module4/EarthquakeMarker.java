@@ -16,6 +16,11 @@ public abstract class EarthquakeMarker extends SimplePointMarker
 	// Did the earthquake occur on land?  This will be set by the subclasses.
 	protected boolean isOnLand;
 
+	// Did the earthquake happen in the last day?  Used in drawing the marker.
+    protected boolean isRecent;
+    protected static final float SIN_PI_4 = (float) Math.sin(Math.PI/4);
+    protected static final float COS_PI_4 = (float) Math.cos(Math.PI/4);
+
 	// SimplePointMarker has a field "radius" which is inherited
 	// by Earthquake marker:
 	// protected float radius;
@@ -52,8 +57,13 @@ public abstract class EarthquakeMarker extends SimplePointMarker
 	{
 		super(feature.getLocation());
 
+        java.util.HashMap<String, Object> properties = feature.getProperties();
+
+		// Is the earthquake recent---did it happen in the last day?
+        String age = properties.get("age").toString().toLowerCase();
+        isRecent = age.contains("hour") || age.contains("day");
+
 		// Add a radius property and then set the properties
-		java.util.HashMap<String, Object> properties = feature.getProperties();
 		float magnitude = Float.parseFloat(properties.get("magnitude").toString());
 		if (magnitude >= THRESHOLD_MODERATE) {
 		    this.radius = MODERATE_MAGNITUDE_RADIUS;
@@ -76,8 +86,6 @@ public abstract class EarthquakeMarker extends SimplePointMarker
 		
 		// call abstract method implemented in child class to draw marker shape
 		drawEarthquake(pg, x, y);
-		
-		// OPTIONAL TODO: draw X over marker if within past day		
 		
 		// reset to previous styling
 		pg.popStyle();

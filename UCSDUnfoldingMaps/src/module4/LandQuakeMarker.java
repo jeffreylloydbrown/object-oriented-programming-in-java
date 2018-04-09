@@ -1,6 +1,7 @@
 package module4;
 
 import de.fhpotsdam.unfolding.data.PointFeature;
+import processing.core.PConstants;
 import processing.core.PGraphics;
 
 /** Implements a visual marker for land earthquakes on an earthquake map
@@ -31,8 +32,22 @@ public class LandQuakeMarker extends EarthquakeMarker {
 		
 		// HINT: Notice the radius variable in the EarthquakeMarker class
 		// and how it is set in the EarthquakeMarker constructor
-		
+
+        pg.ellipseMode(PConstants.CENTER);
 		pg.ellipse(x, y, radius, radius);
+
+		if (isRecent) {
+            // recent earthquakes get a black X drawn over them.  For circles,
+            // we need to find the endpoints from the center.
+            // with right triangle at 0,0, x would be radius*cos(45 degrees).
+            // y would be radius*sin(45 degrees).
+            float xOffset = radius/2 * COS_PI_4;
+            float yOffset = radius/2 * SIN_PI_4;
+            pg.stroke(0, 0, 0);
+            pg.strokeWeight(2);
+            pg.line(x-xOffset, y-yOffset, x+xOffset, y+yOffset);
+            pg.line(x-xOffset, y+yOffset, x+xOffset, y-yOffset);
+        }
 	}
 	
 

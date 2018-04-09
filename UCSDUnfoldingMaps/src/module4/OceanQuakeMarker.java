@@ -28,8 +28,18 @@ public class OceanQuakeMarker extends EarthquakeMarker {
 		
 		// HINT: Notice the radius variable in the EarthquakeMarker class
 		// and how it is set in the EarthquakeMarker constructor
+
+        float offset = radius/2;
 		
-		pg.rect(x-radius/2, y-radius/2, radius, radius);
+		pg.rect(x-offset, y-offset, radius, radius);
+
+		// racent quakes get a black X drawn over the marker.
+        if (isRecent) {
+            pg.stroke(0, 0, 0);
+            pg.strokeWeight(2);
+            pg.line(x-offset, y-offset, x+offset, y+offset);
+            pg.line(x-offset, y+offset, x+offset, y-offset);
+        }
 	}
 	
 
