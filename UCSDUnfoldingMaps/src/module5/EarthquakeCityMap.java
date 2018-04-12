@@ -8,6 +8,7 @@ import de.fhpotsdam.unfolding.data.Feature;
 import de.fhpotsdam.unfolding.data.GeoJSONReader;
 import de.fhpotsdam.unfolding.data.PointFeature;
 import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.marker.AbstractMarker;
 import de.fhpotsdam.unfolding.marker.AbstractShapeMarker;
 import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.marker.MultiMarker;
@@ -150,7 +151,15 @@ public class EarthquakeCityMap extends PApplet {
 	// 
 	private void selectMarkerIfHover(List<Marker> markers)
 	{
-		// TODO: Implement this method
+		if (null == lastSelected) {
+		    for (Marker m : markers) {
+		        if (m.isInside(map, mouseX, mouseY)) {
+		            lastSelected = (CommonMarker) m;
+		            lastSelected.setSelected(true);
+		            return;  // exit immediately so we don't find other ones.
+                }
+            }
+        }
 	}
 	
 	/** The event handler for mouse clicks

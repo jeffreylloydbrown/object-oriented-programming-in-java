@@ -52,6 +52,7 @@ public class CityMarker extends CommonMarker {
 	{
 		
 		// TODO: Implement this method
+		System.out.println("Selected city: "+getCity());
 	}
 	
 	
