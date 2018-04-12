@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b6461c3-c987-47b9-a42e-49489e5ee628" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/CityMarker.java" afterPath="$PROJECT_DIR$/src/module5/CityMarker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/CommonMarker.java" afterPath="$PROJECT_DIR$/src/module5/CommonMarker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" afterPath="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" afterPath="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/LandQuakeMarker.java" afterPath="$PROJECT_DIR$/src/module5/LandQuakeMarker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/OceanQuakeMarker.java" afterPath="$PROJECT_DIR$/src/module5/OceanQuakeMarker.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,21 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EarthquakeCityMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/module4/EarthquakeCityMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-322">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="50" selection-end-column="113" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CityMarker.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CityMarker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/module5/CityMarker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="188">
+              <caret line="37" column="26" lean-forward="false" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -47,14 +33,14 @@
       <file leaf-file-name="CommonMarker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module5/CommonMarker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-91">
+            <state relative-caret-position="119">
               <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EarthquakeCityMap.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EarthquakeCityMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeCityMap.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
@@ -67,7 +53,7 @@
       <file leaf-file-name="LandQuakeMarker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module5/LandQuakeMarker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
+            <state relative-caret-position="119">
               <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
               <folding />
             </state>
@@ -87,7 +73,7 @@
       <file leaf-file-name="EarthquakeMarker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeMarker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-829">
+            <state relative-caret-position="119">
               <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
               <folding />
             </state>
@@ -133,12 +119,12 @@
         <option value="$PROJECT_DIR$/src/module4/OceanQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module4/LandQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module4/EarthquakeCityMap.java" />
-        <option value="$PROJECT_DIR$/src/module5/CityMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/CommonMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/LandQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/OceanQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" />
+        <option value="$PROJECT_DIR$/src/module5/CityMarker.java" />
       </list>
     </option>
   </component>
@@ -164,6 +150,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,10 +186,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -853,17 +839,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module5/CityMarker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/module5/CommonMarker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
+        <state relative-caret-position="119">
           <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
@@ -871,7 +849,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeMarker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-829">
+        <state relative-caret-position="119">
           <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding />
         </state>
@@ -879,7 +857,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module5/LandQuakeMarker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
+        <state relative-caret-position="119">
           <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding />
         </state>
@@ -895,7 +873,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module4/EarthquakeCityMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
+        <state relative-caret-position="544">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="50" selection-end-column="113" />
           <folding />
         </state>
@@ -905,6 +883,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="77" column="88" lean-forward="false" selection-start-line="77" selection-start-column="88" selection-end-line="77" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/module5/CityMarker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="37" column="26" lean-forward="false" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
           <folding />
         </state>
       </provider>
