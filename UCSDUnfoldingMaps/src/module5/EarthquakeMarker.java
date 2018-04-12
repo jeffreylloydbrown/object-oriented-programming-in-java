@@ -93,9 +93,7 @@ public abstract class EarthquakeMarker extends CommonMarker
 	@Override
 	public void showTitle(PGraphics pg, float x, float y)
 	{
-		// TODO: Implement this method
-		System.out.println("Selected quake: "+getTitle());
-		
+		drawStringAsPopup(pg, x, y, getTitle());
 	}
 
 	

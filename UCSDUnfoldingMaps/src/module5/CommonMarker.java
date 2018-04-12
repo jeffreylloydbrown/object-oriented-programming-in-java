@@ -48,4 +48,26 @@ public abstract class CommonMarker extends SimplePointMarker {
 	}
 	public abstract void drawMarker(PGraphics pg, float x, float y);
 	public abstract void showTitle(PGraphics pg, float x, float y);
+
+	// Draw "title" inside a white box.
+	public void drawStringAsPopup(PGraphics pg, float x, float y, String title) {
+		// Save previous drawing style
+		pg.pushStyle();
+		int popupOffset =  5;
+		int margin = 5;
+
+		// For now, always go 5 pixels below the bottom of the marker (y+radius)
+		// box itself will be 5 + textWidth() + 5 wide,
+		// 5 + textAscent() + textDescent() + 5 high.
+		// We don't account for newlines yet.
+		pg.fill(255,255,255);
+		pg.rect(x, y+radius+popupOffset,
+				margin+pg.textWidth(title)+margin, margin+pg.textAscent()+pg.textDescent()+margin);
+		pg.fill(0,0,0);
+		// Text is indented from box left and top edges by 5 pixels.
+		pg.text(title, x+margin, y+radius+popupOffset+margin+pg.textAscent());
+
+		// Restore previous drawing style
+		pg.popStyle();
+	}
 }

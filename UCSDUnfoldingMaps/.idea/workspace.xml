@@ -4,7 +4,7 @@
     <list default="true" id="0b6461c3-c987-47b9-a42e-49489e5ee628" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/CityMarker.java" afterPath="$PROJECT_DIR$/src/module5/CityMarker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" afterPath="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/CommonMarker.java" afterPath="$PROJECT_DIR$/src/module5/CommonMarker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" afterPath="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CityMarker.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CityMarker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module5/CityMarker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="54" column="56" lean-forward="false" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
+            <state relative-caret-position="213">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -35,14 +35,15 @@
       <file leaf-file-name="EarthquakeCityMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeCityMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-527">
-              <caret line="154" column="38" lean-forward="true" selection-start-line="154" selection-start-column="38" selection-end-line="154" selection-end-column="38" />
+            <state relative-caret-position="2720">
+              <caret line="168" column="7" lean-forward="false" selection-start-line="168" selection-start-column="7" selection-end-line="168" selection-end-column="7" />
               <folding>
-                <element signature="method#setup#0;class#EarthquakeCityMap#0" expanded="false" />
-                <element signature="method#addKey#0;class#EarthquakeCityMap#0" expanded="false" />
-                <element signature="method#isLand#0;class#EarthquakeCityMap#0" expanded="false" />
-                <element signature="method#printQuakes#0;class#EarthquakeCityMap#0" expanded="false" />
-                <element signature="method#isInCountry#0;class#EarthquakeCityMap#0" expanded="false" />
+                <marker date="1523562319931" expanded="false" signature="7432:7703" ph="{...}" />
+                <marker date="1523562319931" expanded="false" signature="8048:8379" ph="{...}" />
+                <marker date="1523562319931" expanded="true" signature="8055:8218" ph="//..." />
+                <marker date="1523562319931" expanded="false" signature="8458:9053" ph="{...}" />
+                <marker date="1523562319931" expanded="false" signature="9375:10244" ph="{...}" />
+                <marker date="1523562319931" expanded="true" signature="9461:9587" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -51,19 +52,22 @@
       <file leaf-file-name="CommonMarker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module5/CommonMarker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            <state relative-caret-position="475">
+              <caret line="67" column="78" lean-forward="false" selection-start-line="67" selection-start-column="78" selection-end-line="67" selection-end-column="78" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EarthquakeMarker.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EarthquakeMarker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeMarker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="96" column="42" lean-forward="false" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
-              <folding />
+            <state relative-caret-position="207">
+              <caret line="95" column="46" lean-forward="false" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
+              <folding>
+                <element signature="e#2784#2785#0" expanded="true" />
+                <element signature="e#2830#2831#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,12 +111,12 @@
         <option value="$PROJECT_DIR$/src/module4/OceanQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module4/LandQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module4/EarthquakeCityMap.java" />
-        <option value="$PROJECT_DIR$/src/module5/CommonMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/LandQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/OceanQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" />
-        <option value="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" />
+        <option value="$PROJECT_DIR$/src/module5/CommonMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/CityMarker.java" />
+        <option value="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" />
       </list>
     </option>
   </component>
@@ -140,6 +144,8 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,8 +174,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -406,7 +410,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -417,12 +421,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251634" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32438478" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26626325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2695599" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -483,7 +487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -499,7 +502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="83" column="43" lean-forward="true" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -538,7 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -586,7 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -594,7 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="83" column="43" lean-forward="false" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,13 +750,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/2.5_week.atom">
+      <provider editor-type-id="apk-viewer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="64" lean-forward="false" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
         </state>
-      </provider>
-      <provider editor-type-id="apk-viewer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/parsing/ParseFeed.java">
@@ -780,7 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="38" column="31" lean-forward="false" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,39 +815,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeCityMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-527">
-          <caret line="154" column="38" lean-forward="true" selection-start-line="154" selection-start-column="38" selection-end-line="154" selection-end-column="38" />
+        <state relative-caret-position="2720">
+          <caret line="168" column="7" lean-forward="false" selection-start-line="168" selection-start-column="7" selection-end-line="168" selection-end-column="7" />
           <folding>
-            <element signature="method#setup#0;class#EarthquakeCityMap#0" expanded="false" />
-            <element signature="method#addKey#0;class#EarthquakeCityMap#0" expanded="false" />
-            <element signature="method#isLand#0;class#EarthquakeCityMap#0" expanded="false" />
-            <element signature="method#printQuakes#0;class#EarthquakeCityMap#0" expanded="false" />
-            <element signature="method#isInCountry#0;class#EarthquakeCityMap#0" expanded="false" />
+            <marker date="1523562319931" expanded="false" signature="7432:7703" ph="{...}" />
+            <marker date="1523562319931" expanded="false" signature="8048:8379" ph="{...}" />
+            <marker date="1523562319931" expanded="true" signature="8055:8218" ph="//..." />
+            <marker date="1523562319931" expanded="false" signature="8458:9053" ph="{...}" />
+            <marker date="1523562319931" expanded="false" signature="9375:10244" ph="{...}" />
+            <marker date="1523562319931" expanded="true" signature="9461:9587" ph="//..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module5/CommonMarker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeMarker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="96" column="42" lean-forward="false" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
+        <state relative-caret-position="475">
+          <caret line="67" column="78" lean-forward="false" selection-start-line="67" selection-start-column="78" selection-end-line="67" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module5/CityMarker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="54" column="56" lean-forward="false" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
+        <state relative-caret-position="213">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeMarker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="95" column="46" lean-forward="false" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
+          <folding>
+            <element signature="e#2784#2785#0" expanded="true" />
+            <element signature="e#2830#2831#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
