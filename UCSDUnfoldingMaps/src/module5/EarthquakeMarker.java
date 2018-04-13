@@ -1,7 +1,10 @@
 package module5;
 
 import de.fhpotsdam.unfolding.data.PointFeature;
+import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.marker.Marker;
 import processing.core.PGraphics;
+import java.util.List;
 
 /** Implements a visual marker for earthquakes on an earthquake map
  * 
@@ -94,6 +97,22 @@ public abstract class EarthquakeMarker extends CommonMarker
 	public void showTitle(PGraphics pg, float x, float y)
 	{
 		drawStringAsPopup(pg, x, y, getTitle());
+	}
+
+	public void showThreatCircleOnly(List<Marker> quakeMarkers, List<Marker> cityMarkers) {
+
+		// Where am I?  What is my threat range?
+        Location myLocation = getLocation();
+        double threatRadius = threatCircle();
+
+        // I'm an earthquake marker.  That means I hide all other earthquakes and
+        // all cities farther away than `threatRadius`
+        for (Marker m : quakeMarkers)
+            m.setHidden((EarthquakeMarker) m != this);
+        for (Marker m : cityMarkers) {
+            CityMarker city = (CityMarker) m;
+            city.setHidden(city.getDistanceTo(myLocation) > threatRadius);
+        }
 	}
 
 	

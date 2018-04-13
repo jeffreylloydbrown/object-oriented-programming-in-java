@@ -3,9 +3,12 @@ package module5;
 import de.fhpotsdam.unfolding.data.Feature;
 import de.fhpotsdam.unfolding.data.PointFeature;
 import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import processing.core.PConstants;
 import processing.core.PGraphics;
+
+import java.util.List;
 
 /** Implements a visual marker for cities on an earthquake map
  * 
@@ -53,7 +56,20 @@ public class CityMarker extends CommonMarker {
         // title is 'City, Country: pop. NNN million'
 	    drawStringAsPopup(pg, x, y, getCity()+", "+getCountry()+": pop. "+getPopulation()+" million");
 	}
-	
+
+	public void showThreatCircleOnly(List<Marker> quakeMarkers, List<Marker> cityMarkers) {
+        // Where am I?
+        Location myLocation = getLocation();
+
+        // I'm a city marker.  That means I hide all other cities and
+        // all earthquakes farther away than their individual threat circle.
+        for (Marker m : cityMarkers)
+            m.setHidden((CityMarker) m != this);
+        for (Marker m : quakeMarkers) {
+            EarthquakeMarker quake = (EarthquakeMarker) m;
+            quake.setHidden(quake.getDistanceTo(myLocation) > quake.threatCircle());
+        }
+	}
 	
 	
 	/* Local getters for some city properties.  

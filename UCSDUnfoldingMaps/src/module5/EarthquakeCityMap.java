@@ -170,10 +170,34 @@ public class EarthquakeCityMap extends PApplet {
 	@Override
 	public void mouseClicked()
 	{
-		// TODO: Implement this method
-		// Hint: You probably want a helper method or two to keep this code
-		// from getting too long/disorganized
+		if (null == lastClicked) {
+		    // what marker did I click?  Might be none, in which case we ignore the click.
+            CommonMarker marker = findMarkerIClicked();
+            if (null != marker) {
+                lastClicked = marker;
+                lastClicked.setClicked(true);
+                // Hide the stuff we're supposed to hide.  Polymorphic.
+                lastClicked.showThreatCircleOnly(quakeMarkers, cityMarkers);
+            }
+        } else {
+		    // We have a marker that's been clicked, so we unclick it and
+            // unhide all markers.
+		    lastClicked.setClicked(false);
+		    lastClicked = null;
+		    unhideMarkers();
+        }
 	}
+
+	// Figure out which, if any, of the markers got clicked.
+    private CommonMarker findMarkerIClicked() {
+	    for (Marker m : quakeMarkers)
+	        if (m.isInside(map, mouseX, mouseY))
+	            return (EarthquakeMarker) m;
+	    for (Marker m : cityMarkers)
+	        if (m.isInside(map, mouseX, mouseY))
+	            return (CityMarker) m;
+	    return null;
+    }
 	
 	
 	// loop over and unhide all markers
