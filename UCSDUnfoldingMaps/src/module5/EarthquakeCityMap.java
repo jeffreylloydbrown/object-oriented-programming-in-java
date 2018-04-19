@@ -100,6 +100,9 @@ public class EarthquakeCityMap extends PApplet {
 	    quakeMarkers = new ArrayList<Marker>();
 	    
 	    for(PointFeature feature : earthquakes) {
+	      // make the city markers list available to any earthquake, for special processing.
+		  feature.addProperty("cityMarkers", cityMarkers);
+		  
 		  //check if LandQuake
 		  if(isLand(feature)) {
 		    quakeMarkers.add(new LandQuakeMarker(feature));
