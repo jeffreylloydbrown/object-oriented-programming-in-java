@@ -39,6 +39,9 @@
 {"type":"Feature","properties":{"name":"Moscow", "population":"12.20", "country" : "Russia", "coastal" : "false"},"geometry":{"type":"Point","coordinates":[37.7500, 55.7500]}},
 {"type":"Feature","properties":{"name":"Tehran", "population":"8.15", "country" : "Iran", "coastal" : "false"},"geometry":{"type":"Point","coordinates":[51.4231, 35.6961]}},
 {"type":"Feature","properties":{"name":"McKinney", "population":"0.16", "country" : "United States", "coastal" : "false"},"geometry":{"type":"Point","coordinates":[-96.6398, 33.1972]}},
+{"type":"Feature","properties":{"name":"Nuku'alofa", "population":"0.02", "country" : "Tonga", "coastal" : "false"},"geometry":{"type":"Point","coordinates":[-175.2049, -21.1393]}},
+{"type":"Feature","properties":{"name":"Close to Tonga 1", "population":"0.00", "country" : "Tonga", "coastal" : "false"},"geometry":{"type":"Point","coordinates":[-176.0, -22.0]}},
+{"type":"Feature","properties":{"name":"Close to Tonga 2", "population":"0.00", "country" : "Tonga", "coastal" : "false"},"geometry":{"type":"Point","coordinates":[-175.5, -20.5]}},
 {"type":"Feature","properties":{"name":"Cairo", "population":"10.23", "country" : "Egypt", "coastal" : "false"},"geometry":{"type":"Point","coordinates":[31.2333, 30.0500]}}
 ]
 }
