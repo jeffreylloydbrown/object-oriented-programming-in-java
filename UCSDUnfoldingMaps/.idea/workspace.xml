@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b6461c3-c987-47b9-a42e-49489e5ee628" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" afterPath="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module5/OceanQuakeMarker.java" afterPath="$PROJECT_DIR$/src/module5/OceanQuakeMarker.java" />
     </list>
@@ -23,9 +24,11 @@
       <file leaf-file-name="EarthquakeCityMap.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeCityMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1987">
+              <caret line="136" column="14" lean-forward="false" selection-start-line="136" selection-start-column="14" selection-end-line="136" selection-end-column="14" />
+              <folding>
+                <element signature="e#5404#5412#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -33,12 +36,22 @@
       <file leaf-file-name="OceanQuakeMarker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module5/OceanQuakeMarker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="424">
+              <caret line="45" column="104" lean-forward="false" selection-start-line="45" selection-start-column="104" selection-end-line="45" selection-end-column="104" />
               <folding>
-                <element signature="e#815#816#0" expanded="true" />
-                <element signature="e#872#873#0" expanded="true" />
+                <element signature="e#871#872#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonMarker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/module5/CommonMarker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="53" column="46" lean-forward="false" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,11 +97,11 @@
         <option value="$PROJECT_DIR$/src/module4/LandQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module4/EarthquakeCityMap.java" />
         <option value="$PROJECT_DIR$/src/module5/LandQuakeMarker.java" />
-        <option value="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" />
-        <option value="$PROJECT_DIR$/src/module5/CityMarker.java" />
-        <option value="$PROJECT_DIR$/src/module5/CommonMarker.java" />
         <option value="$PROJECT_DIR$/src/module6/AirportMap.java" />
         <option value="$PROJECT_DIR$/data/city-data.json" />
+        <option value="$PROJECT_DIR$/src/module5/CommonMarker.java" />
+        <option value="$PROJECT_DIR$/src/module5/CityMarker.java" />
+        <option value="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/OceanQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" />
       </list>
@@ -423,7 +436,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7107843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49217004" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -447,7 +460,7 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="24" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -682,13 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module5/CityMarker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="70" column="9" lean-forward="false" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/module6/OceanQuakeMarker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -782,36 +788,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeMarker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="90" selection-end-column="22" />
+        <state relative-caret-position="171">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module5/CommonMarker.java">
+    <entry file="file://$PROJECT_DIR$/src/module5/CityMarker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="479">
+          <caret line="65" column="55" lean-forward="false" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module5/OceanQuakeMarker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="424">
+          <caret line="45" column="104" lean-forward="false" selection-start-line="45" selection-start-column="104" selection-end-line="45" selection-end-column="104" />
           <folding>
-            <element signature="e#815#816#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/module5/CommonMarker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="53" column="46" lean-forward="false" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeCityMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1987">
+          <caret line="136" column="14" lean-forward="false" selection-start-line="136" selection-start-column="14" selection-end-line="136" selection-end-column="14" />
+          <folding>
+            <element signature="e#5404#5412#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
