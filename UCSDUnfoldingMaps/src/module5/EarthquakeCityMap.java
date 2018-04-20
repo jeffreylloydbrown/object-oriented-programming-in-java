@@ -8,10 +8,7 @@ import de.fhpotsdam.unfolding.data.Feature;
 import de.fhpotsdam.unfolding.data.GeoJSONReader;
 import de.fhpotsdam.unfolding.data.PointFeature;
 import de.fhpotsdam.unfolding.geo.Location;
-import de.fhpotsdam.unfolding.marker.AbstractMarker;
-import de.fhpotsdam.unfolding.marker.AbstractShapeMarker;
-import de.fhpotsdam.unfolding.marker.Marker;
-import de.fhpotsdam.unfolding.marker.MultiMarker;
+import de.fhpotsdam.unfolding.marker.*;
 import de.fhpotsdam.unfolding.providers.Google;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
 import de.fhpotsdam.unfolding.providers.Microsoft;
@@ -59,6 +56,10 @@ public class EarthquakeCityMap extends PApplet {
 	private List<Marker> cityMarkers;
 	// Markers for each earthquake
 	private List<Marker> quakeMarkers;
+	// Markers for lines from ocean quakes to cities in their threat circle.
+    // Unlike city and quake markers, these will normally all be hidden.
+    // Clicking on an ocean quake will unhide the appropriate ones.
+    private List<Marker> lineMarkers;
 
 	// A List of country markers
 	private List<Marker> countryMarkers;
@@ -98,19 +99,17 @@ public class EarthquakeCityMap extends PApplet {
 		//     STEP 3: read in earthquake RSS feed
 	    List<PointFeature> earthquakes = ParseFeed.parseEarthquake(this, earthquakesURL);
 	    quakeMarkers = new ArrayList<Marker>();
-	    
+	    lineMarkers = new ArrayList<Marker>();
 	    for(PointFeature feature : earthquakes) {
-	      // make the city markers list and map available to any earthquake, for special processing.
-		  feature.addProperty("cityMarkers", cityMarkers);
-		  feature.addProperty("map", map);
-		  
 		  //check if LandQuake
 		  if(isLand(feature)) {
 		    quakeMarkers.add(new LandQuakeMarker(feature));
 		  }
 		  // OceanQuakes
 		  else {
-		    quakeMarkers.add(new OceanQuakeMarker(feature));
+		    OceanQuakeMarker o = new OceanQuakeMarker(feature);
+		    quakeMarkers.add(o);
+		    lineMarkers.addAll(buildLineMarkers(o));
 		  }
 	    }
 
@@ -122,6 +121,7 @@ public class EarthquakeCityMap extends PApplet {
 	    //           for their geometric properties
 	    map.addMarkers(quakeMarkers);
 	    map.addMarkers(cityMarkers);
+	    map.addMarkers(lineMarkers);  // not sure if I should use a separate MarkerManager for this.
 	    
 	}  // End setup
 	
@@ -132,6 +132,29 @@ public class EarthquakeCityMap extends PApplet {
 		addKey();
 		
 	}
+
+	// Add SimpleLinesMarkers for cities inside e's threat circle.
+    // While e is really an OceanQuakeMarker, and the target will be cities, stuff in this
+    // routine doesn't need to be at that level to work; the method could work for any
+    // kind of earthquake marker unchanged.
+	private List<Marker> buildLineMarkers (EarthquakeMarker e) {
+	    // Where am I?  will repeatedly test against this below.
+	    Location eLocation = e.getLocation();
+	    double threatRadius = e.threatCircle();
+	    List<Marker> lines = new ArrayList<Marker>();
+
+	    for (Marker city : cityMarkers) {
+	        if (city.getDistanceTo(eLocation) <= threatRadius) {
+                SimpleLinesMarker slm = new SimpleLinesMarker(eLocation, city.getLocation());
+                slm.setHidden(true);        // the default is to not show the lines, so create this hidden.
+                //slm.setStrokeColor(color(0, 250, 0));   // you'd think this would be the line color.  It isn't.
+                slm.setColor(color(0, 250, 0));
+                slm.setStrokeWeight(3);
+                lines.add(slm);
+            }
+        }
+        return lines;
+    }
 	
 	/** Event handler that gets called automatically when the 
 	 * mouse moves.
@@ -181,7 +204,7 @@ public class EarthquakeCityMap extends PApplet {
                 lastClicked = marker;
                 lastClicked.setClicked(true);
                 // Hide the stuff we're supposed to hide.  Polymorphic.
-                lastClicked.showThreatCircleOnly(quakeMarkers, cityMarkers);
+                lastClicked.showThreatCircleOnly(quakeMarkers, cityMarkers, lineMarkers);
             }
         } else {
 		    // We have a marker that's been clicked, so we unclick it and
@@ -189,6 +212,7 @@ public class EarthquakeCityMap extends PApplet {
 		    lastClicked.setClicked(false);
 		    lastClicked = null;
 		    unhideMarkers();
+		    hideLineMarkers();
         }
 	}
 
@@ -204,7 +228,7 @@ public class EarthquakeCityMap extends PApplet {
     }
 	
 	
-	// loop over and unhide all markers
+	// loop over and unhide all quake and city markers
 	private void unhideMarkers() {
 		for(Marker marker : quakeMarkers) {
 			marker.setHidden(false);
@@ -214,6 +238,12 @@ public class EarthquakeCityMap extends PApplet {
 			marker.setHidden(false);
 		}
 	}
+
+	// loop over and hide all line markers
+    private void hideLineMarkers() {
+	    for (Marker marker : lineMarkers)
+	        marker.setHidden(true);
+    }
 	
 	// helper method to draw key in GUI
 	private void addKey() {	
