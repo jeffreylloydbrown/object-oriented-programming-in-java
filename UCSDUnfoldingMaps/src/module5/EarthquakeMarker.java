@@ -108,7 +108,7 @@ public abstract class EarthquakeMarker extends CommonMarker
         // I'm an earthquake marker.  That means I hide all other earthquakes and
         // all cities farther away than `threatRadius`
         for (Marker m : quakeMarkers)
-            m.setHidden((EarthquakeMarker) m != this);
+            m.setHidden(m != this);
         for (Marker m : cityMarkers) {
             CityMarker city = (CityMarker) m;
             city.setHidden(city.getDistanceTo(myLocation) > threatRadius);
