@@ -4,12 +4,16 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="0b6461c3-c987-47b9-a42e-49489e5ee628" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module5/CityMarker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module5/CityMarker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="0b6461c3-c987-47b9-a42e-49489e5ee628" name="Default" comment="" />
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +41,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeCityMap.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,10 +68,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="595">
               <caret line="45" selection-start-line="45" selection-end-line="45" />
+=======
+      <file leaf-file-name="EarthquakeCityMap.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeCityMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="136" column="14" lean-forward="false" selection-start-line="136" selection-start-column="14" selection-end-line="136" selection-end-column="14" />
+              <folding />
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeMarker.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,6 +94,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -116,13 +132,13 @@
         <option value="$PROJECT_DIR$/src/module4/LandQuakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module4/EarthquakeCityMap.java" />
         <option value="$PROJECT_DIR$/src/module5/LandQuakeMarker.java" />
-        <option value="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" />
-        <option value="$PROJECT_DIR$/src/module5/CityMarker.java" />
-        <option value="$PROJECT_DIR$/src/module5/CommonMarker.java" />
         <option value="$PROJECT_DIR$/src/module6/AirportMap.java" />
-        <option value="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" />
         <option value="$PROJECT_DIR$/data/city-data.json" />
+        <option value="$PROJECT_DIR$/src/module5/CommonMarker.java" />
+        <option value="$PROJECT_DIR$/src/module5/CityMarker.java" />
+        <option value="$PROJECT_DIR$/src/module5/EarthquakeMarker.java" />
         <option value="$PROJECT_DIR$/src/module5/OceanQuakeMarker.java" />
+        <option value="$PROJECT_DIR$/src/module5/EarthquakeCityMap.java" />
       </list>
     </option>
   </component>
@@ -144,6 +160,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -161,13 +181,17 @@
               <item name="UCSDUnfoldingMaps" type="b2602c69:ProjectViewProjectNode" />
               <item name="UCSDUnfoldingMaps" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="module5" type="462c0819:PsiDirectoryNode" />
+              <item name="module6" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+      <pane id="Scratches" />
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -366,9 +390,9 @@
     <option name="totallyTimeSpent" value="1072000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2965204" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
@@ -399,6 +423,35 @@
       <window_info active="true" anchor="right" id="Coverage" order="7" side_tool="true" visible="true" weight="0.3294621" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Database" order="9" />
+=======
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2572707" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28606358" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49217004" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277405" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,6 +470,10 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
+<<<<<<< HEAD
+=======
+      <option name="time" value="29" />
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -561,6 +618,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/module5/CityMarker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
@@ -568,6 +626,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
     <entry file="file://$PROJECT_DIR$/src/module6/OceanQuakeMarker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -653,14 +713,29 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/city-data.json">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
           <caret line="43" column="177" selection-start-line="43" selection-start-column="177" selection-end-line="43" selection-end-column="177" />
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="43" column="177" lean-forward="false" selection-start-line="43" selection-start-column="177" selection-end-line="43" selection-end-column="177" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeCityMap.java">
+    <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeMarker.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding />
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/module5/CityMarker.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1292">
           <caret line="93" column="36" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
           <folding>
@@ -680,17 +755,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
           <caret line="89" selection-start-line="89" selection-end-line="90" selection-end-column="22" />
-          <folding>
-            <element signature="e#2896#2897#0" expanded="true" />
-            <element signature="e#2942#2943#0" expanded="true" />
-          </folding>
+=======
+        <state relative-caret-position="479">
+          <caret line="65" column="55" lean-forward="false" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/module5/OceanQuakeMarker.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="45" column="104" lean-forward="false" selection-start-line="45" selection-start-column="104" selection-end-line="45" selection-end-column="104" />
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
+          <folding>
+            <element signature="e#871#872#0" expanded="false" />
+            <element signature="e#928#929#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/module5/OceanQuakeMarker.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/module5/CommonMarker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="53" column="46" lean-forward="false" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/module5/EarthquakeCityMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="136" column="14" lean-forward="false" selection-start-line="136" selection-start-column="14" selection-end-line="136" selection-end-column="14" />
+          <folding />
+>>>>>>> 416a38d52c531a7393480972abc266a2d547a96a
         </state>
       </provider>
     </entry>

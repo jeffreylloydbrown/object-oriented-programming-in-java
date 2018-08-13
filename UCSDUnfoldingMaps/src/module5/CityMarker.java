@@ -57,12 +57,13 @@ public class CityMarker extends CommonMarker {
 	    drawStringAsPopup(pg, x, y, getCity()+", "+getCountry()+": pop. "+getPopulation()+" million");
 	}
 
-	public void showThreatCircleOnly(List<Marker> quakeMarkers, List<Marker> cityMarkers) {
+	public void showThreatCircleOnly(List<Marker> quakeMarkers, List<Marker> cityMarkers, List<Marker> lineMarkers) {
         // Where am I?
         Location myLocation = getLocation();
 
         // I'm a city marker.  That means I hide all other cities and
         // all earthquakes farther away than their individual threat circle.
+		// I don't do anything (yet) with line markers.
         for (Marker m : cityMarkers)
             m.setHidden(m != this);
         for (Marker m : quakeMarkers) {

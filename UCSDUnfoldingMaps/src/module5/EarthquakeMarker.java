@@ -99,7 +99,7 @@ public abstract class EarthquakeMarker extends CommonMarker
 		drawStringAsPopup(pg, x, y, getTitle());
 	}
 
-	public void showThreatCircleOnly(List<Marker> quakeMarkers, List<Marker> cityMarkers) {
+	public void showThreatCircleOnly(List<Marker> quakeMarkers, List<Marker> cityMarkers, List<Marker> lineMarkers) {
 
 		// Where am I?  What is my threat range?
         Location myLocation = getLocation();
@@ -107,6 +107,7 @@ public abstract class EarthquakeMarker extends CommonMarker
 
         // I'm an earthquake marker.  That means I hide all other earthquakes and
         // all cities farther away than `threatRadius`
+		// I don't do anything with line markers and quakes in general, but a subtype might....
         for (Marker m : quakeMarkers)
             m.setHidden(m != this);
         for (Marker m : cityMarkers) {

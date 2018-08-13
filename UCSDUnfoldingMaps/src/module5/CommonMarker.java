@@ -50,7 +50,8 @@ public abstract class CommonMarker extends SimplePointMarker {
 	}
 	public abstract void drawMarker(PGraphics pg, float x, float y);
 	public abstract void showTitle(PGraphics pg, float x, float y);
-	public abstract void showThreatCircleOnly(List<Marker> quakeMarkers, List<Marker> cityMarkers);
+	public abstract void showThreatCircleOnly(List<Marker> quakeMarkers, List<Marker> cityMarkers,
+											  List<Marker> lineMarkers);
 
 	// Draw "title" inside a white box.
 	public void drawStringAsPopup(PGraphics pg, float x, float y, String title) {
