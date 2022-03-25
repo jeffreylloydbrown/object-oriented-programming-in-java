@@ -5,12 +5,11 @@ import processing.core.PConstants;
 import processing.core.PGraphics;
 
 /** Implements a visual marker for earthquakes on an earthquake map
- * 
+ *
  * @author UC San Diego Intermediate Software Development MOOC team
  *
  */
-// TODO: Implement the comparable interface
-public abstract class EarthquakeMarker extends CommonMarker
+public abstract class EarthquakeMarker extends CommonMarker implements Comparable<EarthquakeMarker>
 {
 	
 	// Did the earthquake occur on land?  This will be set by the subclasses.
@@ -54,9 +53,12 @@ public abstract class EarthquakeMarker extends CommonMarker
 		setProperties(properties);
 		this.radius = 1.75f*getMagnitude();
 	}
-	
-	// TODO: Add the method:
-	// public int compareTo(EarthquakeMarker marker)
+
+	// this is largest to the smallest order
+	public int compareTo(EarthquakeMarker m)
+	{
+		return Float.compare(m.getMagnitude(), this.getMagnitude());
+	}
 	
 	
 	// calls abstract method drawEarthquake and then checks age and draws X if needed
@@ -124,8 +126,7 @@ public abstract class EarthquakeMarker extends CommonMarker
 	 */
 	public double threatCircle() {	
 		double miles = 20.0f * Math.pow(1.8, 2*getMagnitude()-5);
-		double km = (miles * kmPerMile);
-		return km;
+		return (miles * kmPerMile);
 	}
 	
 	// determine color of marker from depth

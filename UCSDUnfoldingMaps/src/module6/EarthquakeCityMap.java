@@ -40,11 +40,6 @@ public class EarthquakeCityMap extends PApplet {
 	/** This is where to find the local tiles, for working without an Internet connection */
 	public static String mbTilesString = "blankLight-1-3.mbtiles";
 	
-	
-
-	//feed with magnitude 2.5+ Earthquakes
-	private String earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.atom";
-	
 	// The map
 	private UnfoldingMap map;
 	
@@ -65,6 +60,9 @@ public class EarthquakeCityMap extends PApplet {
 		String cityFile = "city-data.json";
 		String countryFile = "countries.geo.json";
 
+		//feed with magnitude 2.5+ Earthquakes
+		String earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.atom";
+
 		// (1) Initializing canvas and map tiles
 		size(900, 700, OPENGL);
 		if (offline) {
@@ -84,7 +82,7 @@ public class EarthquakeCityMap extends PApplet {
 		//earthquakesURL = "test2.atom";
 		
 		// Uncomment this line to take the quiz
-		//earthquakesURL = "quiz2.atom";
+		earthquakesURL = "quiz2.atom";
 		
 		
 		// (2) Reading in earthquake data and geometric properties
@@ -115,7 +113,8 @@ public class EarthquakeCityMap extends PApplet {
 	    }
 
 	    // could be used for debugging
-	    printQuakes();
+			//printQuakes();
+	    sortAndPrint(25);
 	 		
 	    // (3) Add markers to map
 	    //     NOTE: Country markers are not added to the map.  They are used
@@ -134,10 +133,18 @@ public class EarthquakeCityMap extends PApplet {
 		
 	}
 	
-	
-	// TODO: Add the method:
-	//   private void sortAndPrint(int numToPrint)
-	// and then call that method from setUp
+	private void sortAndPrint(int numQuakes)
+	{
+		List<Marker> quakes = quakeMarkers;
+		quakes.sort(null);
+		int i = 1;
+		for (Marker m: quakes) {
+			EarthquakeMarker em = (EarthquakeMarker) m;
+			System.out.println(i + ": mag = " + em.getMagnitude() + ", " + m.toString());
+			if (i > numQuakes) break;
+			i++;
+		}
+	}
 	
 	/** Event handler that gets called automatically when the 
 	 * mouse moves.
