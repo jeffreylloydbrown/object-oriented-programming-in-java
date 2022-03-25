@@ -109,7 +109,7 @@ public abstract class EarthquakeMarker extends CommonMarker
         // all cities farther away than `threatRadius`
 		// I don't do anything with line markers and quakes in general, but a subtype might....
         for (Marker m : quakeMarkers)
-            m.setHidden((EarthquakeMarker) m != this);
+            m.setHidden(m != this);
         for (Marker m : cityMarkers) {
             CityMarker city = (CityMarker) m;
             city.setHidden(city.getDistanceTo(myLocation) > threatRadius);

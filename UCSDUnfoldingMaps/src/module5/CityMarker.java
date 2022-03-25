@@ -65,7 +65,7 @@ public class CityMarker extends CommonMarker {
         // all earthquakes farther away than their individual threat circle.
 		// I don't do anything (yet) with line markers.
         for (Marker m : cityMarkers)
-            m.setHidden((CityMarker) m != this);
+            m.setHidden(m != this);
         for (Marker m : quakeMarkers) {
             EarthquakeMarker quake = (EarthquakeMarker) m;
             quake.setHidden(quake.getDistanceTo(myLocation) > quake.threatCircle());
