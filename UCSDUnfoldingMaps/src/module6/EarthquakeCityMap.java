@@ -14,8 +14,7 @@ import de.fhpotsdam.unfolding.utils.MapUtils;
 import parsing.ParseFeed;
 import processing.core.PApplet;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
@@ -82,7 +81,7 @@ public class EarthquakeCityMap extends PApplet {
 		//earthquakesURL = "test2.atom";
 		
 		// Uncomment this line to take the quiz
-		earthquakesURL = "quiz2.atom";
+		//earthquakesURL = "quiz2.atom";
 		
 		
 		// (2) Reading in earthquake data and geometric properties
@@ -113,8 +112,15 @@ public class EarthquakeCityMap extends PApplet {
 	    }
 
 	    // could be used for debugging
-			//printQuakes();
-	    sortAndPrint(25);
+		  if (earthquakesURL.equals("quiz2.atom")) {
+				System.out.println("QUESTION 7 (adjust numQuakes to number in question 7, answer is the last item):");
+				sortAndPrint(6, 1);
+
+				System.out.println("\nQUESTION 8 (adjust minimumRepeated to number in question 8, manually count items == magnitude of first item):");
+				sortAndPrint(10, 3);
+			} else {
+				printQuakes();
+			}
 	 		
 	    // (3) Add markers to map
 	    //     NOTE: Country markers are not added to the map.  They are used
@@ -133,16 +139,62 @@ public class EarthquakeCityMap extends PApplet {
 		
 	}
 	
-	private void sortAndPrint(int numQuakes)
+	private void sortAndPrint(int numQuakes, int minimumRepeated)
 	{
-		List<Marker> quakes = quakeMarkers;
-		quakes.sort(null);
-		int i = 1;
-		for (Marker m: quakes) {
-			EarthquakeMarker em = (EarthquakeMarker) m;
-			System.out.println(i + ": mag = " + em.getMagnitude() + ", " + m.toString());
-			if (i > numQuakes) break;
-			i++;
+		if (minimumRepeated <= 1) minimumRepeated = 1;
+		if (numQuakes <= 1) numQuakes = 1;
+
+		List<EarthquakeMarker> earthquakes = new ArrayList<>();
+		for (Marker m: quakeMarkers)
+			earthquakes.add((EarthquakeMarker) m);
+
+		// God, I miss Scala.
+		Map<Float, List<EarthquakeMarker>> groupedByMagnitude = groupByMagnitude(earthquakes);
+		Map<Float, List<EarthquakeMarker>> filteredByMinRepetition = filterByRepeatedMagnitude(groupedByMagnitude, minimumRepeated);
+		List<Float> magnitudes = new ArrayList<>(filteredByMinRepetition.keySet());
+		magnitudes.sort(null);  // smallest to largest, we want largest to smallest
+		int count = 0;
+		for (int i = magnitudes.size() - 1; i >= 0 && count < numQuakes; i--) {  // largest to smallest
+			List<EarthquakeMarker> quakes = filteredByMinRepetition.get(magnitudes.get(i));
+			for (EarthquakeMarker em: quakes) {
+				count++;
+				System.out.println(count + ": " + em);
+				if (count >= numQuakes) break;
+			}
+		}
+	}
+
+	private Map<Float, List<EarthquakeMarker>> groupByMagnitude(List<EarthquakeMarker> earthquakeMarkers)
+	{
+		Map<Float, List<EarthquakeMarker>> groupedByMagnitude = new HashMap<>();
+
+		for (EarthquakeMarker em: earthquakeMarkers) {
+			float magnitude = em.getMagnitude();
+			List<EarthquakeMarker> list = groupedByMagnitude.getOrDefault(magnitude, new ArrayList<>());
+			list.add(em);
+			groupedByMagnitude.put(magnitude, list);
+		}
+
+		return groupedByMagnitude;
+	}
+
+	private Map<Float, List<EarthquakeMarker>>
+	filterByRepeatedMagnitude(Map<Float, List<EarthquakeMarker>> input, int minimumRepeated)
+	{
+		// minimumRepeated <= 0 is silly, so we return an empty filtered map in that case.
+		// minimumRepeated == 1 means to include every earthquake we received, so just return the input.
+		if (minimumRepeated < 1)
+			return new HashMap<>();
+		else if (minimumRepeated == 1)
+			return input;
+		else {
+			Map<Float, List<EarthquakeMarker>> filtered = new HashMap<>();
+			for (Float magnitude : input.keySet()) {
+				List<EarthquakeMarker> quakes = input.get(magnitude);
+				if (quakes.size() >= minimumRepeated)
+					filtered.put(magnitude, quakes);
+			}
+			return filtered;
 		}
 	}
 	
