@@ -56,6 +56,31 @@ public class EarthquakeCityMap extends PApplet {
 	// NEW IN MODULE 5
 	private CommonMarker lastSelected;
 	private CommonMarker lastClicked;
+
+	// my extension: visibility controls
+	// PUI's event subsystem is expecting "connected" variables to be here.
+	// That means I cannot put them in FilterController, which makes more sense,
+	// but then I have to replicate much of the event subsystem and that just
+	// isn't worth it for this assignment.  I thought about making FilterController
+	// a subclass of Toggle and rewriting sets(), but that also meant extending
+	// the event manager.  The real solution is for the event subsystem to let you
+	// pass in the reference to the class holding these variables instead of assuming
+	// they are in the child of PApplet.
+	private boolean showCities = true;
+	boolean getShowCities() { return showCities; }
+	private boolean showLandQuakes = false;
+	boolean getShowLandQuakes() { return showLandQuakes; }
+	private boolean showOceanQuakes = true;
+	boolean getShowOceanQuakes() { return showOceanQuakes; }
+	private boolean showShallowQuakes = false;
+	boolean getShowShallowQuakes() { return showShallowQuakes; }
+	private boolean showIntermediateQuakes = true;
+	boolean getShowIntermediateQuakes() { return showIntermediateQuakes; }
+	private boolean showDeepQuakes = false;
+	boolean getShowDeepQuakes() { return showDeepQuakes; }
+	private boolean showOnlyRecentQuakes = true;
+	boolean getShowOnlyRecentQuakes() { return showOnlyRecentQuakes; }
+	private FilterController filter = null;
 	
 	public void setup() {
 		// The files containing city names and info and country names and info
@@ -130,7 +155,8 @@ public class EarthquakeCityMap extends PApplet {
 	    //           for their geometric properties
 	    map.addMarkers(quakeMarkers);
 	    map.addMarkers(cityMarkers);
-	    
+
+			filter = new FilterController(this, "Filters", 20, 300, 150, 350);
 	    
 	}  // End setup
 	
@@ -139,7 +165,6 @@ public class EarthquakeCityMap extends PApplet {
 		background(0);
 		map.draw();
 		addKey();
-		
 	}
 	
 	private void sortAndPrint(int numQuakes, int minimumRepeated)
