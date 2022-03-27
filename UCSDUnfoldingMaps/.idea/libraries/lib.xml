@@ -21,6 +21,7 @@
       <root url="jar://$PROJECT_DIR$/lib/gluegen-rt-natives-linux-i586.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/gluegen-rt-natives-windows-amd64.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jogl-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pUI-643/pUI/library/pUI.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
