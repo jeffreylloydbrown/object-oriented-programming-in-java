@@ -49,10 +49,10 @@ public class MyPApplet extends PApplet{
 		return rgb;
 	}	
 	
-	public static void main (String[] args) {
-		//Add main method for running as application
-		PApplet.main(new String[] {"--present", "MyPApplet"});
-	}
+//	public static void main (String[] args) {
+//		//Add main method for running as application
+//		PApplet.main(new String[] {"--present", "MyPApplet"});
+//	}
 }
 
 
