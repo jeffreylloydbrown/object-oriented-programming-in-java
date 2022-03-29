@@ -25,6 +25,10 @@ public class CityMarker extends CommonMarker {
 		// Cities have properties: "name" (city name), "country" (country name)
 		// and "population" (population, in millions)
 	}
+
+	public void setVisibility(EarthquakeCityMap ecm) {
+		this.setHidden(! ecm.getShowCities());
+	}
 	
 	
 	// pg is the graphics object on which you call the graphics

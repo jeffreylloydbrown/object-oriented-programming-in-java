@@ -25,7 +25,6 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	// based on magnitude. 
 	protected float radius;
 	
-	
 	// constants for distance
 	protected static final float kmPerMile = 1.6f;
 	
@@ -39,9 +38,6 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	/** Greater than or equal to this threshold is a deep depth */
 	public static final float THRESHOLD_DEEP = 300;
 
-	// ADD constants for colors
-
-	
 	// abstract method implemented in derived classes
 	public abstract void drawEarthquake(PGraphics pg, float x, float y);
 		
@@ -79,12 +75,21 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 		return "Past Hour".equals(age) || "Past Day".equals(age);
 	}
 
+	// Used by subclasses to help them ultimately figure our their marker visibility.
+	protected boolean depthAndRecencyVisibility(EarthquakeCityMap ecm) {
+		boolean withDepth =
+				(ecm.getShowShallowQuakes() && depth == Depth.SHALLOW) ||
+						(ecm.getShowIntermediateQuakes() && depth == Depth.INTERMEDIATE) ||
+						(ecm.getShowDeepQuakes() && depth == Depth.DEEP)
+		;
+		return ecm.getShowOnlyRecentQuakes() ? withDepth && isRecent : withDepth;
+	}
+
 	// this is largest to the smallest order
 	public int compareTo(EarthquakeMarker m)
 	{
 		return Float.compare(m.getMagnitude(), this.getMagnitude());
 	}
-	
 	
 	// calls abstract method drawEarthquake and then checks age and draws X if needed
 	@Override
@@ -100,7 +105,6 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 		
 		// IMPLEMENT: add X over marker if within past day
 		if (isRecent) {
-			
 			pg.strokeWeight(2);
 			int buffer = 2;
 			pg.line(x-(radius+buffer), 
@@ -111,12 +115,10 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 					y+(radius+buffer), 
 					x+radius+buffer, 
 					y-(radius+buffer));
-			
 		}
 		
 		// reset to previous styling
 		pg.popStyle();
-		
 	}
 
 	/** Show the title of the earthquake if this marker is selected */
@@ -134,10 +136,8 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 		pg.textAlign(PConstants.LEFT, PConstants.TOP);
 		pg.fill(0);
 		pg.text(title, x + 3 , y +18);
-		
-		
+
 		pg.popStyle();
-		
 	}
 
 	
@@ -203,7 +203,4 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 		return isOnLand;
 	}
 	
-
-	
-	
-}
+} // EarthquakeMarker

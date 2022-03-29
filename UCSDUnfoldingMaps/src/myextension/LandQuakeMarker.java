@@ -20,6 +20,11 @@ public class LandQuakeMarker extends EarthquakeMarker {
 		isOnLand = true;
 	}
 
+	public void setVisibility(EarthquakeCityMap ecm) {
+		boolean showIt = ecm.getShowLandQuakes() && isOnLand && depthAndRecencyVisibility(ecm);
+		this.setHidden(! showIt);
+	}
+
 
 	@Override
 	public void drawEarthquake(PGraphics pg, float x, float y) {

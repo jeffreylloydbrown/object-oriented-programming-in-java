@@ -16,7 +16,11 @@ public class OceanQuakeMarker extends EarthquakeMarker {
 		// setting field in earthquake marker
 		isOnLand = false;
 	}
-	
+
+	public void setVisibility(EarthquakeCityMap ecm) {
+		boolean showIt = ecm.getShowOceanQuakes() && ! isOnLand && depthAndRecencyVisibility(ecm);
+		this.setHidden(! showIt);
+	}
 
 	@Override
 	public void drawEarthquake(PGraphics pg, float x, float y) {

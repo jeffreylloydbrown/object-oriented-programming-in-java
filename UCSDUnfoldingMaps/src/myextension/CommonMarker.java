@@ -14,6 +14,8 @@ public abstract class CommonMarker extends SimplePointMarker {
 
 	// Records whether this marker has been clicked (most recently)
 	protected boolean clicked = false;
+
+	public abstract void setVisibility(EarthquakeCityMap ecm);
 	
 	public CommonMarker(Location location) {
 		super(location);

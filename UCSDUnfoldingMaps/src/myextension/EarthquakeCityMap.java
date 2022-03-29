@@ -66,20 +66,21 @@ public class EarthquakeCityMap extends PApplet {
 	// the event manager.  The real solution is for the event subsystem to let you
 	// pass in the reference to the class holding these variables instead of assuming
 	// they are in the child of PApplet.
+	// We start with everything visible, which means we do NOT want to show only recent quakes.
 	private boolean showCities = true;
-	boolean getShowCities() { return showCities; }
-	private boolean showLandQuakes = false;
-	boolean getShowLandQuakes() { return showLandQuakes; }
+	public boolean getShowCities() { return showCities; }
+	private boolean showLandQuakes = true;
+	public boolean getShowLandQuakes() { return showLandQuakes; }
 	private boolean showOceanQuakes = true;
-	boolean getShowOceanQuakes() { return showOceanQuakes; }
-	private boolean showShallowQuakes = false;
-	boolean getShowShallowQuakes() { return showShallowQuakes; }
+	public boolean getShowOceanQuakes() { return showOceanQuakes; }
+	private boolean showShallowQuakes = true;
+	public boolean getShowShallowQuakes() { return showShallowQuakes; }
 	private boolean showIntermediateQuakes = true;
-	boolean getShowIntermediateQuakes() { return showIntermediateQuakes; }
-	private boolean showDeepQuakes = false;
-	boolean getShowDeepQuakes() { return showDeepQuakes; }
-	private boolean showOnlyRecentQuakes = true;
-	boolean getShowOnlyRecentQuakes() { return showOnlyRecentQuakes; }
+	public boolean getShowIntermediateQuakes() { return showIntermediateQuakes; }
+	private boolean showDeepQuakes = true;
+	public boolean getShowDeepQuakes() { return showDeepQuakes; }
+	private boolean showOnlyRecentQuakes = false;
+	public boolean getShowOnlyRecentQuakes() { return showOnlyRecentQuakes; }
 	private FilterController filter = null;
 	
 	public void setup() {
@@ -163,8 +164,15 @@ public class EarthquakeCityMap extends PApplet {
 	
 	public void draw() {
 		background(0);
+		setVisibility(cityMarkers);
+		setVisibility(quakeMarkers);
 		map.draw();
 		addKey();
+	}
+
+	private void setVisibility(List<Marker> markers) {
+		for (Marker m: markers)
+			((CommonMarker) m).setVisibility(this);
 	}
 	
 	private void sortAndPrint(int numQuakes, int minimumRepeated)
