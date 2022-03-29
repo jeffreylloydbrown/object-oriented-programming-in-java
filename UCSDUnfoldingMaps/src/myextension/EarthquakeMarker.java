@@ -17,6 +17,8 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 
 	protected Depth depth;
 
+	protected boolean isRecent;
+
 	// The radius of the Earthquake marker
 	// You will want to set this in the constructor, either
 	// using the thresholds below, or a continuous function
@@ -55,6 +57,7 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 		setProperties(properties);
 		this.radius = 1.75f*getMagnitude();
 		this.depth = calculateDepth();
+		this.isRecent = isRecent();
 	}
 
 	private Depth calculateDepth() {
@@ -69,6 +72,11 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 		else {
 			return Depth.DEEP;
 		}
+	}
+
+	private boolean isRecent() {
+		String age = getStringProperty("age");
+		return "Past Hour".equals(age) || "Past Day".equals(age);
 	}
 
 	// this is largest to the smallest order
@@ -90,9 +98,8 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 		// call abstract method implemented in child class to draw marker shape
 		drawEarthquake(pg, x, y);
 		
-		// IMPLEMENT: add X over marker if within past day		
-		String age = getStringProperty("age");
-		if ("Past Hour".equals(age) || "Past Day".equals(age)) {
+		// IMPLEMENT: add X over marker if within past day
+		if (isRecent) {
 			
 			pg.strokeWeight(2);
 			int buffer = 2;
