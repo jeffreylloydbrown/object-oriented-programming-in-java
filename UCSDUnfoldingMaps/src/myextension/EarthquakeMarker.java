@@ -15,6 +15,8 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	// Did the earthquake occur on land?  This will be set by the subclasses.
 	protected boolean isOnLand;
 
+	protected Depth depth;
+
 	// The radius of the Earthquake marker
 	// You will want to set this in the constructor, either
 	// using the thresholds below, or a continuous function
@@ -52,6 +54,21 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 		properties.put("radius", 2*magnitude );
 		setProperties(properties);
 		this.radius = 1.75f*getMagnitude();
+		this.depth = calculateDepth();
+	}
+
+	private Depth calculateDepth() {
+		float depth = this.getDepth();
+
+		if (depth < THRESHOLD_INTERMEDIATE) {
+			return Depth.SHALLOW;
+		}
+		else if (depth < THRESHOLD_DEEP) {
+			return Depth.INTERMEDIATE;
+		}
+		else {
+			return Depth.DEEP;
+		}
 	}
 
 	// this is largest to the smallest order
@@ -132,16 +149,16 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	// determine color of marker from depth
 	// We use: Deep = red, intermediate = blue, shallow = yellow
 	private void colorDetermine(PGraphics pg) {
-		float depth = getDepth();
-		
-		if (depth < THRESHOLD_INTERMEDIATE) {
-			pg.fill(255, 255, 0);
-		}
-		else if (depth < THRESHOLD_DEEP) {
-			pg.fill(0, 0, 255);
-		}
-		else {
-			pg.fill(255, 0, 0);
+		switch (this.depth) {
+			case SHALLOW:
+				pg.fill(255, 255, 0);
+				break;
+			case INTERMEDIATE:
+				pg.fill(0, 0, 255);
+				break;
+			case DEEP:
+				pg.fill(255, 0, 0);
+				break;
 		}
 	}
 	
@@ -167,8 +184,7 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	}
 	
 	public String getTitle() {
-		return (String) getProperty("title");	
-		
+		return getProperty("title") + ", depth " + getDepth();
 	}
 	
 	public float getRadius() {
