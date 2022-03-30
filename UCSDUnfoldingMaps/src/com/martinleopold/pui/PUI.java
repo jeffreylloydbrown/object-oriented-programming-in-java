@@ -73,7 +73,7 @@ public final class PUI extends Rect {
 		padding(DEFAULT_PADDING_X, DEFAULT_PADDING_Y); // also sets layout padding
 		columnWidth(DEFAULT_COLUMNWIDTH);
 		columnGap(DEFAULT_COLUMNGAP);
-		font("SourceSansPro-Semibold.ttf"); // this loads the TTF from the data/ bundled in the jar. simple as that // needs to be done after grid
+		font("Calibri"); // this loads the TTF from the data/ bundled in the jar. simple as that // needs to be done after grid
 		
 		visible = true;
 	}
