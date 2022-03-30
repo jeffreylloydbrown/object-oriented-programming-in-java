@@ -59,8 +59,9 @@ public class EarthquakeCityMap extends PApplet {
 
 	// my extension: visibility controls
 	// PUI's event subsystem is expecting "connected" variables to be here.
-	// That means I cannot put them in FilterController, which makes more sense,
-	// but then I have to replicate much of the event subsystem and that just
+	// They are updated by using reflection to find them, PUI does this.
+	// That means I cannot put them in FilterController, which makes more sense.
+	// But then I have to replicate much of the event subsystem and that just
 	// isn't worth it for this assignment.  I thought about making FilterController
 	// a subclass of Toggle and rewriting sets(), but that also meant extending
 	// the event manager.  The real solution is for the event subsystem to let you
@@ -156,7 +157,7 @@ public class EarthquakeCityMap extends PApplet {
 		map.addMarkers(quakeMarkers);
 		map.addMarkers(cityMarkers);
 
-		new FilterController(this, "Filters", 20, 300, 150, 350);
+		new FilterController(this, 20, 300, 150, 350);
 
 	}  // End setup
 
