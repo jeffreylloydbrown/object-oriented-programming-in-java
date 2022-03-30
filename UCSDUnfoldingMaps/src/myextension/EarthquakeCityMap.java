@@ -170,8 +170,11 @@ public class EarthquakeCityMap extends PApplet {
 	}
 
 	private void setVisibility(List<Marker> markers) {
-		for (Marker m: markers)
-			((CommonMarker) m).setVisibility(this);
+		// only change the visibility if we ARE NOT examining a specific marker.
+		if (lastClicked == null) {
+			for (Marker m : markers)
+				((CommonMarker) m).setVisibility(this);
+		}
 	}
 
 	private void sortAndPrint(int numQuakes, int minimumRepeated)
