@@ -15,31 +15,31 @@ public class FilterController {
     ui.addDivider();
     ui.newRow();
 
-    ui.addToggle().label("Cities").isPressed(applet.getShowCities()).sets("showCities");
+    ui.addSlideIndicator().label("Cities").isPressed(applet.getShowCities()).sets("showCities");
     ui.newRow();
 
-    ui.addToggle().label("Land Quakes").isPressed(applet.getShowLandQuakes()).sets("showLandQuakes");
+    ui.addSlideIndicator().label("Land Quakes").isPressed(applet.getShowLandQuakes()).sets("showLandQuakes");
     ui.newRow();
 
-    ui.addToggle().label("Ocean Quakes").isPressed(applet.getShowOceanQuakes()).sets("showOceanQuakes");
-    ui.newRow();
-
-    ui.addDivider();
-    ui.newRow();
-
-    ui.addToggle().label("Shallow Quakes").isPressed(applet.getShowShallowQuakes()).sets("showShallowQuakes");
-    ui.newRow();
-
-    ui.addToggle().label("Intermediate Quakes").isPressed(applet.getShowIntermediateQuakes()).sets("showIntermediateQuakes");
-    ui.newRow();
-
-    ui.addToggle().label("Deep Quakes").isPressed(applet.getShowDeepQuakes()).sets("showDeepQuakes");
+    ui.addSlideIndicator().label("Ocean Quakes").isPressed(applet.getShowOceanQuakes()).sets("showOceanQuakes");
     ui.newRow();
 
     ui.addDivider();
     ui.newRow();
 
-    ui.addToggle().label("Only Recent Quakes").isPressed(applet.getShowOnlyRecentQuakes()).sets("showOnlyRecentQuakes");
+    ui.addSlideIndicator().label("Shallow Quakes").isPressed(applet.getShowShallowQuakes()).sets("showShallowQuakes");
+    ui.newRow();
+
+    ui.addSlideIndicator().label("Intermediate Quakes").isPressed(applet.getShowIntermediateQuakes()).sets("showIntermediateQuakes");
+    ui.newRow();
+
+    ui.addSlideIndicator().label("Deep Quakes").isPressed(applet.getShowDeepQuakes()).sets("showDeepQuakes");
+    ui.newRow();
+
+    ui.addDivider();
+    ui.newRow();
+
+    ui.addSlideIndicator().label("Only Recent Quakes").isPressed(applet.getShowOnlyRecentQuakes()).sets("showOnlyRecentQuakes");
     ui.newRow();
   }
 

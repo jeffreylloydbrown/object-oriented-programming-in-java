@@ -219,6 +219,12 @@ public final class PUI extends Rect {
 	public Toggle addToggle() {
 		return new Toggle(this, gridX2Px(DEFAULT_TOGGLE_W), gridY2Px(DEFAULT_TOGGLE_H));
 	}
+
+	static float DEFAULT_SLIDE_INDICATOR_W = 4;
+	static float DEFAULT_SLIDE_INDICATOR_H = 2;
+	public SlideIndicator addSlideIndicator() {
+		return new SlideIndicator(this, gridX2Px(DEFAULT_SLIDE_INDICATOR_W), gridY2Px(DEFAULT_SLIDE_INDICATOR_H));
+	}
 	
 	static float DEFAULT_SLIDER_W = 11;
 	static float DEFAULT_SLIDER_H = 2;
