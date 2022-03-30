@@ -1,1 +1,0 @@
-Before modifications, the map is drawn without any markers because none of the markers have code to draw themselves yet.  The setup code loads all the cities and earthquakes, and the country info for asking location questions.  All quakes are "ocean quakes" because isLand() always returns false at this point. The map key that is drawn looks like the Module 3 key.
