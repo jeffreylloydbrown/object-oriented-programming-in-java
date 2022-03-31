@@ -92,13 +92,13 @@ public class EarthquakeCityMap extends PApplet {
 		String earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.atom";
 
 		// (1) Initializing canvas and map tiles
-		size(900, 700, OPENGL);
+		size(900, 650, OPENGL);
 		if (offline) {
-			map = new UnfoldingMap(this, 200, 50, 650, 600, new MBTilesMapProvider(mbTilesString));
+			map = new UnfoldingMap(this, 225, 25, 650, 600, new MBTilesMapProvider(mbTilesString));
 			earthquakesURL = "2.5_week.atom";  // The same feed, but saved August 7, 2015
 		}
 		else {
-			map = new UnfoldingMap(this, 200, 50, 650, 600, new Google.GoogleMapProvider());
+			map = new UnfoldingMap(this, 225, 25, 650, 600, new Google.GoogleMapProvider());
 			// IF YOU WANT TO TEST WITH A LOCAL FILE, uncomment the next line
 			//earthquakesURL = "2.5_week.atom";
 		}
@@ -157,7 +157,7 @@ public class EarthquakeCityMap extends PApplet {
 		map.addMarkers(quakeMarkers);
 		map.addMarkers(cityMarkers);
 
-		new FilterController(this, 20, 300, 150, 350);
+		new FilterController(this, 20, 275, 150, 350);
 
 	}  // End setup
 
@@ -364,7 +364,7 @@ public class EarthquakeCityMap extends PApplet {
 		fill(255, 250, 240);
 
 		int xBase = 25;
-		int yBase = 50;
+		int yBase = 25;
 
 		rect(xBase, yBase, 150, 250);
 
