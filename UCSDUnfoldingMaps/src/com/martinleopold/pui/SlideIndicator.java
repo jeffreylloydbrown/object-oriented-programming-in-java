@@ -12,6 +12,16 @@ import processing.core.PApplet;
 public class SlideIndicator extends Toggle {
 
 	protected Label label;
+	protected int paddingBeforeLabel = 5; // a pleasing default value
+	protected int paddingAboveLabel;      // remember it defaults to zero
+
+	protected int centerLabelVertically() {
+		return (label.height > height) ? 0 : (height - label.height)/2;
+	}
+
+	protected void setLabelPosition(int width) {
+		label.setPosition(this.x+width+paddingBeforeLabel, this.y+paddingAboveLabel);
+	}
 
 	@Override
 	protected SlideIndicator getThis() {
@@ -21,7 +31,8 @@ public class SlideIndicator extends Toggle {
 	public SlideIndicator(PUI pui, int width, int height) {
 		super(pui, width, height);
 		label = new Label(pui, 0, pui.gridY2Px(PUI.DEFAULT_FONTSIZE_MEDIUM), false);
-		label.setPosition(this.x+width, this.y);
+		setLabelPosition(width);
+		paddingAboveLabel = centerLabelVertically();
 		label.active = false; // no redraw
 	}
 
@@ -33,7 +44,7 @@ public class SlideIndicator extends Toggle {
 		setSize(width, height); // adjust layoutRect size
 
 		pui.layout.reLayout(); // need to relayout cuz dimensions changed after first layout (in super())
-		label.setPosition(this.x+width, this.y);		// label needs to be placed again as position might have changed
+		setLabelPosition(width);		// label needs to be placed again as position might have changed
 		return getThis();
 	}
 
@@ -48,10 +59,10 @@ public class SlideIndicator extends Toggle {
 		super.setSize(w, h);
 		if (label != null) {
 			if (label.active) {
-				layoutRect.width = width + label.width; // joint width
-				layoutRect.height = Math.max(height, label.height);
+				layoutRect.width = width + label.width + paddingBeforeLabel; // joint width
+				layoutRect.height = Math.max(height, label.height+paddingAboveLabel);
 			}
-			label.setPosition(x+width, y); // label needs to be replaced
+			setLabelPosition(width);  // label needs to be replaced
 		}
 	}
 
@@ -59,7 +70,8 @@ public class SlideIndicator extends Toggle {
 	void setPosition(int x, int y) {
 		super.setPosition(x, y);
 		if (label != null) {
-			label.setPosition(x+width, y); // label needs to be replaced
+			// can't use setLabelPosition here, we are changing X and Y!
+			label.setPosition(x+width+paddingBeforeLabel, y+paddingAboveLabel); // label needs to be replaced
 		}
 	}
 
@@ -92,5 +104,28 @@ public class SlideIndicator extends Toggle {
 
 		label.draw(p);
 	}
+
+	public SlideIndicator paddingBeforeLabel(int sizePx) {
+		paddingBeforeLabel = Math.min(Math.max(0, sizePx), pui.width);
+		return getThis();
+	}
+
+	public SlideIndicator paddingAboveLabel(int sizePx) {
+		paddingAboveLabel = Math.min(Math.max(0, sizePx), pui.height);
+		return getThis();
+	}
+
+	public SlideIndicator setFontSize(int sizePx) {
+		label.setSize((int)(label.textWidth(sizePx)+1), sizePx);
+		pui.layout.reLayout();
+		paddingAboveLabel = centerLabelVertically();
+		return getThis();
+	}
+
+	public SlideIndicator small() { return setFontSize(pui.gridY2Px(PUI.DEFAULT_FONTSIZE_SMALL));	}
+
+	public SlideIndicator medium() { return setFontSize(pui.gridY2Px(PUI.DEFAULT_FONTSIZE_MEDIUM));}
+
+	public SlideIndicator large() {	return setFontSize(pui.gridY2Px(PUI.DEFAULT_FONTSIZE_LARGE));	}
 
 }
