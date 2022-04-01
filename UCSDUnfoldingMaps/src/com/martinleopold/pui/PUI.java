@@ -427,6 +427,10 @@ public final class PUI extends Rect {
 	int gridX2Px(float x) {
 		return Math.round(gridX * x);
 	}
+
+	public float px2gridX(int x) { return ((float) x)/gridX; }
+
+	public float px2gridY(int y) { return ((float) y/gridY); }
 			
 	int gridY2Px(float y) {
 		return Math.round(gridY * y);
