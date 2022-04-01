@@ -157,7 +157,7 @@ public class EarthquakeCityMap extends PApplet {
 		map.addMarkers(quakeMarkers);
 		map.addMarkers(cityMarkers);
 
-		new FilterController(this, 20, 275, 150, 350);
+		new FilterController(this, 20, 275, 150, 270);
 
 	}  // End setup
 
