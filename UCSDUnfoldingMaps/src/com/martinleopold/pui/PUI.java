@@ -464,6 +464,9 @@ public final class PUI extends Rect {
 	
 	float paddingX;
 	float paddingY;
+
+	public int paddingXPx() { return gridX2Px(paddingX); }
+	public int paddingYPx() { return gridY2Px(paddingY); }
 	
 	// set padding in grid units
 	public PUI padding(float x, float y) {
