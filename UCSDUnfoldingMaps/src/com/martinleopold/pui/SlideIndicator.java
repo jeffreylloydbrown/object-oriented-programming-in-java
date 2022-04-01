@@ -90,19 +90,24 @@ public class SlideIndicator extends Toggle {
 		p.fill(theme.overlay);
 		p.rect(x, y, width, height);
 
-		int halfWidth = (width-2)/2; // the -2 accounts for the outline width.
+		// On my phone, when the indicator is On the slide trough is green and the slide indicator is to the right.
+		// When Off, the slide indicator is to the left and the slide trough is gray.  Our indicator is a circle drawn
+		// within the trough, which will use the fill color always so that it matches the text.  It has a black stroke
+		// outline to distinguish it from the gray trough when Off.
+		int halfHeight = (height-2)/2;  // the -2 accounts for the outline width.
 
-		// On my phone, when the indicator is on the left part is green and the slide indicator is on the right.
-		// When off, the slide indicator is on the left and the right part is the gray.
-		int leftFill = pressed ? theme.fillHighlight : theme.background;
-		int rightFill = pressed ? theme.background : theme.fillHighlight;
+		int troughColor = pressed ? theme.fillHighlight : theme.background;
+		p.fill(troughColor);
+		p.rect(x+1, y+1, width-2, height-2);
 
-		p.fill(leftFill);
-		p.rect(x+1, y+1, halfWidth, height - 2);
-		p.fill(rightFill);
-		p.rect(x+1+halfWidth, y+1, halfWidth, height - 2);
+		int centerX = x+1 + ( pressed ? 3*(width-2) : width-2 )/4;  // on: 3/4 width, off: 1/4 width
+		int centerY = y+1 + halfHeight;
+		int radius = halfHeight - 2; // subtract 2 to leave a small space for trough color
+		p.stroke(0,0,0);
+		p.fill(theme.fill);
+		p.ellipse(centerX, centerY, 2 * radius, 2 * radius);
 
-		// now add the outline
+		// now add the trough outline
 		if (hovered) p.stroke(theme.outlineHighlight);
 		else p.stroke(theme.outline);
 		p.noFill();
