@@ -1,14 +1,27 @@
 package myextension;
 
 import com.martinleopold.pui.PUI;
+import com.martinleopold.pui.Theme;
+
+import static com.martinleopold.pui.Theme.color;
 
 public class FilterController {
 
+  private static final int offColor = color( 255, 242, 232, 200 );
+  private static final int onColor = color( 0, 218, 60, 255 );
+  private static final int canvasColor = color( 0, 0, 0, 255 );
+  private static final int textColor = color(255, 250, 240, 255);
+  private static final int outlineColor = color( 244, 243, 40, 100 );
+  private static final int outlineHighlightColor = color( 253, 134, 3, 200 );
+
   public FilterController(EarthquakeCityMap applet, int x, int y, int width, int height) {
+
+    Theme theme = new Theme(offColor, outlineColor, outlineHighlightColor, textColor, onColor, canvasColor);
 
     PUI ui = PUI.init(applet)
         .position(x, y)
-        .size(width, height);
+        .size(width, height)
+        .theme(theme);
 
     ui.addLabel("Show:");
     ui.newRow();
