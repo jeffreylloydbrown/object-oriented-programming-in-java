@@ -35,7 +35,7 @@ public class Theme {
 	public int fillHighlight;
 	public int overlay;
 	
-	Theme(int background, int outline, int outlineHighlight, int fill, int fillHighlight, int overlay) {
+	public Theme(int background, int outline, int outlineHighlight, int fill, int fillHighlight, int overlay) {
 		this.background = background;
 		//this.background = setAlpha(background, 160); // override alpha TODO: fix
 		this.outline = outline;
@@ -53,7 +53,7 @@ public class Theme {
 //		fillHighlight = t.fillHighlight;
 //	}
 	
-	static int color(int r, int g, int b, int a) {
+	public static int color(int r, int g, int b, int a) {
       if (a > 255) a = 255; else if (a < 0) a = 0;
       if (r > 255) r = 255; else if (r < 0) r = 0;
       if (g > 255) g = 255; else if (g < 0) g = 0;
@@ -61,11 +61,11 @@ public class Theme {
       return (a << 24) | (r << 16) | (g << 8) | b;
 	}
 	
-	static int color(double r, double g, double b, double a) {
+	public static int color(double r, double g, double b, double a) {
 		return color((int) Math.round(r), (int) Math.round(g), (int) Math.round(b), (int) Math.round(a));
 	}
 	
-	static int setAlpha(int c, int a) {
+	public static int setAlpha(int c, int a) {
 		if (a > 255) a = 255; else if (a < 0) a = 0;
 		return (a << 24)  | (c & 0xffffff);
 	}
