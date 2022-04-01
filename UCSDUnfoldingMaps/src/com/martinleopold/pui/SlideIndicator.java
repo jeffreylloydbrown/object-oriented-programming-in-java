@@ -90,17 +90,23 @@ public class SlideIndicator extends Toggle {
 		p.fill(theme.background);
 		p.rect(x, y, width, height);
 
-		// draw outline
-		// draw outline highlight
+		int halfWidth = (width-2)/2; // the -2 accounts for the outline width.
+
+		// On my phone, when the indicator is on the left part is green and the slide indicator is on the right.
+		// When off, the slide indicator is on the left and the right part is the gray.
+		int leftFill = pressed ? theme.fillHighlight : theme.fill;
+		int rightFill = pressed ? theme.fill : theme.fillHighlight;
+
+		p.fill(leftFill);
+		p.rect(x+1, y+1, halfWidth, height - 2);
+		p.fill(rightFill);
+		p.rect(x+1+halfWidth, y+1, halfWidth, height - 2);
+
+		// now add the outline
 		if (hovered) p.stroke(theme.outlineHighlight);
 		else p.stroke(theme.outline);
-
-		// draw fill
-		// draw fill highlight
-		if (pressed) p.fill(theme.fillHighlight);
-		else p.fill(theme.fill);
-
-		p.rect(x,y, width-1, height-1); // stroked rect is bigger
+		p.noFill();
+		p.rect(x, y, width, height);
 
 		label.draw(p);
 	}
