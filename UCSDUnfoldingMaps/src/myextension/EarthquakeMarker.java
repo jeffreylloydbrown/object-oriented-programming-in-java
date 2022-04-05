@@ -27,11 +27,6 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	
 	// constants for distance
 	protected static final float kmPerMile = 1.6f;
-	
-	/** Greater than or equal to this threshold is a moderate earthquake */
-	public static final float THRESHOLD_MODERATE = 5;
-	/** Greater than or equal to this threshold is a light earthquake */
-	public static final float THRESHOLD_LIGHT = 4;
 
 	/** Greater than or equal to this threshold is an intermediate depth */
 	public static final float THRESHOLD_INTERMEDIATE = 70;
@@ -98,7 +93,7 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 		pg.pushStyle();
 			
 		// determine color of marker from depth
-		colorDetermine(pg);
+		pg.fill(depth.toColor());
 		
 		// call abstract method implemented in child class to draw marker shape
 		drawEarthquake(pg, x, y);
@@ -152,24 +147,7 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 		double miles = 20.0f * Math.pow(1.8, 2*getMagnitude()-5);
 		return (miles * kmPerMile);
 	}
-	
-	// determine color of marker from depth
-	// We use: Deep = red, intermediate = blue, shallow = yellow
-	private void colorDetermine(PGraphics pg) {
-		switch (this.depth) {
-			case SHALLOW:
-				pg.fill(255, 255, 0);
-				break;
-			case INTERMEDIATE:
-				pg.fill(0, 0, 255);
-				break;
-			case DEEP:
-				pg.fill(255, 0, 0);
-				break;
-		}
-	}
-	
-	
+
 	/** toString
 	 * Returns an earthquake marker's string representation
 	 * @return the string representation of an earthquake marker.

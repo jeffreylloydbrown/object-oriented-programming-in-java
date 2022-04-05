@@ -395,11 +395,11 @@ public class EarthquakeCityMap extends PApplet {
 				10);
 		rect(xBase+35-5, yBase+90-5, 10, 10);
 
-		fill(color(255, 255, 0));
+		fill(Depth.SHALLOW.toColor());
 		ellipse(xBase+35, yBase+140, 12, 12);
-		fill(color(0, 0, 255));
+		fill(Depth.INTERMEDIATE.toColor());
 		ellipse(xBase+35, yBase+160, 12, 12);
-		fill(color(255, 0, 0));
+		fill(Depth.DEEP.toColor());
 		ellipse(xBase+35, yBase+180, 12, 12);
 
 		textAlign(LEFT, CENTER);
